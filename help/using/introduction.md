@@ -2,10 +2,10 @@
 title: 소개 [!DNL Asset Compute Service]
 description: "[!DNL Asset Compute Service] 는 복잡성을 줄이고 확장성을 개선하는 클라우드 기반 에셋 처리 서비스입니다."
 exl-id: f8c89f65-5a94-44f3-aaac-4612ae291101
-source-git-commit: 5257e091730f3672c46dfbe45c3e697a6555e6b1
+source-git-commit: c6f747ebd6d1b17834f1af0837609a148804f8a9
 workflow-type: tm+mt
-source-wordcount: '309'
-ht-degree: 6%
+source-wordcount: '278'
+ht-degree: 1%
 
 ---
 
@@ -13,19 +13,19 @@ ht-degree: 6%
 
 [!DNL Asset Compute Service] 는 다음과 같은 확장 가능한 서비스입니다. [!DNL Adobe Experience Cloud] 디지털 자산을 처리합니다. 이미지, 비디오, 문서 및 기타 파일 형식을 썸네일, 추출한 텍스트 및 메타데이터, 아카이브를 포함한 다양한 변환으로 변환할 수 있습니다.
 
-개발자는 사용자 정의 에셋 애플리케이션(사용자 정의 작업자라고도 함)을 플러그인하여 사용자 정의 사용 사례를 처리할 수 있습니다. 서비스는에서 작동합니다. [!DNL Adobe I/O] 런타임. 다음을 통해 확장 가능 [!DNL Adobe Developer App Builder] Node.js로 작성된 Headless 앱. 외부 API 호출과 같은 사용자 지정 작업을 수행하여 이미지 작업을 수행하거나 를 활용할 수 있습니다 [!DNL Adobe Sensei] 지원.
+개발자는 사용자 정의 에셋 애플리케이션(사용자 정의 작업자라고도 함)을 플러그인하여 사용자 정의 사용 사례를 처리할 수 있습니다. 서비스는 Adobe에서 작동합니다 [!DNL I/O Runtime]. 다음을 통해 확장 가능 [!DNL Adobe Developer App Builder] Node.js로 작성된 Headless 앱. 외부 API 호출과 같은 사용자 지정 작업을 수행하여 이미지 작업을 수행하거나 을 활용할 수 있습니다 [!DNL Adobe Sensei] 지원.
 
-[!DNL Adobe Developer App Builder] 는 사용자 지정 웹 애플리케이션을 빌드하고 배포하는 프레임워크입니다. [!DNL Adobe I/O] 런타임으로 Adobe Experience Cloud 솔루션을 확장합니다. 사용자 정의 응용 프로그램을 만들기 위해 개발자는 [!DNL React Spectrum] (Adobe의 UI 툴킷), 마이크로서비스 만들기, 사용자 정의 이벤트 만들기 및 API 오케스트레이션. 다음을 참조하십시오 [Adobe Developer App Builder 설명서](https://developer.adobe.com/app-builder/docs/overview/).
+[!DNL Adobe Developer App Builder] 는 Adobe에서 사용자 지정 웹 애플리케이션을 빌드하고 배포하는 프레임워크입니다 [!DNL I/O Runtime] Adobe Experience Cloud 솔루션을 확장합니다. 사용자 정의 응용 프로그램을 만들기 위해 개발자는 [!DNL React Spectrum] (Adobe의 UI 툴킷), 마이크로서비스 만들기, 사용자 정의 이벤트 만들기 및 API 오케스트레이션. 다음을 참조하십시오 [Adobe Developer App Builder 설명서](https://developer.adobe.com/app-builder/docs/overview/).
 
 >[!NOTE]
 >
->현재, [!DNL Asset Compute Service] 를 통해서만 사용할 수 있습니다. [!DNL Experience Manager] as a [!DNL Cloud Service]. 관리자는 를 호출할 수 있는 처리 프로필을 만듭니다. [!DNL Asset Compute Service] 처리할 자산을 전달합니다. 다음을 참조하십시오 [자산 마이크로서비스 및 처리 프로필 사용](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/manage/asset-microservices-configure-and-use.html).
+>현재, [!DNL Asset Compute Service] 를 통해서만 사용할 수 있습니다. [!DNL Experience Manager] as a [!DNL Cloud Service]. 관리자는 를 호출할 수 있는 처리 프로필을 만듭니다. [!DNL Asset Compute Service] 처리할 자산을 전달합니다. 다음을 참조하십시오 [자산 마이크로서비스 및 처리 프로필 사용](https://experienceleague.adobe.com/ko/docs/experience-manager-cloud-service/content/assets/manage/asset-microservices-configure-and-use).
 
 ## 의 지원되는 사용 사례 [!DNL Asset Compute Service] {#possible-use-cases-benefits}
 
 [!DNL Asset Compute Service] 는 기본 이미지 처리, Adobe 애플리케이션별 전환, 복잡한 비즈니스 요구 사항을 오케스트레이션하는 사용자 정의 애플리케이션 생성과 같은 몇 가지 일반적인 비즈니스 사용 사례를 지원합니다.
 
-다음을 사용할 수 있습니다. [!DNL Asset Compute] 다양한 파일 형식에 대한 썸네일을 생성하는 웹 서비스, [지원되는 파일 형식](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/file-format-support.html). 다음을 참조하십시오 [사용자 지정 구성을 통해 지원되는 사용 사례](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/manage/asset-microservices-configure-and-use.html).
+다음을 사용할 수 있습니다. [!DNL Asset Compute] 다양한 파일 형식에 대한 썸네일을 생성하는 웹 서비스, [지원되는 파일 형식](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/assets/file-format-support). 다음을 참조하십시오 [사용자 지정 구성을 통해 지원되는 사용 사례](https://experienceleague.adobe.com/ko/docs/experience-manager-cloud-service/content/assets/manage/asset-microservices-configure-and-use).
 
 >[!NOTE]
 >
@@ -44,9 +44,9 @@ ht-degree: 6%
 
 >[!MORELIKETHIS]
 >
->* [의 자산 마이크로서비스를 사용한 자산 처리 개요 [!DNL Adobe Experience Manager] as a [!DNL Cloud Service]](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/asset-microservices-overview.html).
+>* [의 자산 마이크로서비스를 사용한 자산 처리 개요 [!DNL Adobe Experience Manager] as a [!DNL Cloud Service]](https://experienceleague.adobe.com/ko/docs/experience-manager-cloud-service/content/assets/asset-microservices-overview).
 >* [Adobe Developer App Builder 설명서](https://developer.adobe.com/app-builder/docs/overview).
->* [처리에 지원되는 파일 형식](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/file-format-support.html).
+>* [처리를 위해 지원되는 파일 형식](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/assets/file-format-support).
 
 <!-- **TBD:**
 * Clarify the service can only be used within AEM as Cloud Service. The docs provided as context for custom application developers. Not to be used as a standalone service.

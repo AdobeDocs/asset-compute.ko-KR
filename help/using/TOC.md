@@ -8,10 +8,10 @@ feature: Asset Compute Microservices
 user-guide-title: Asset compute 서비스 안내서
 user-guide-description: 이 설명서는 다음을 포함합니다 [!DNL Asset Compute Service] 사용자 지정 코드의 개발, 관리, 배포 및 문제 해결 방법과 같은 작업입니다.
 breadcrumb-title: Asset compute 서비스 안내서
-source-git-commit: 06016be9b813c28c502f5bd5df87fd42a211e7ac
+source-git-commit: c6f747ebd6d1b17834f1af0837609a148804f8a9
 workflow-type: tm+mt
-source-wordcount: '96'
-ht-degree: 16%
+source-wordcount: '86'
+ht-degree: 6%
 
 ---
 
@@ -20,7 +20,7 @@ ht-degree: 16%
 
 + [Asset compute 서비스 사용 안내서](home.md)
 + [개요](introduction.md)
-+ [지원되는 파일 형식](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/file-format-support.html)
++ [지원되는 파일 형식](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/assets/file-format-support)
 + [아키텍처](architecture.md)
 + [API 참조](api.md)
 + asset compute 서비스 확장 {#extend}
@@ -30,6 +30,6 @@ ht-degree: 16%
    + [사용자 정의 애플리케이션 개발](develop-custom-application.md)
    + [사용자 정의 애플리케이션 테스트](test-custom-application.md)
    + [사용자 정의 애플리케이션 배포](deploy-custom-application.md)
-   + [통합 및 사용 [!DNL Experience Manager] as a [!DNL Cloud Service]](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/asset-microservices-overview.html)
+   + [통합 및 사용 [!DNL Experience Manager] as a [!DNL Cloud Service]](https://experienceleague.adobe.com/ko/docs/experience-manager-cloud-service/content/assets/asset-microservices-overview)
 + [문제 해결](troubleshooting.md)
-+ [오픈 소스 프로젝트에 기여](contribute-to-compute-service.md)
++ [오픈 소스 프로젝트로 Contribute](contribute-to-compute-service.md)
