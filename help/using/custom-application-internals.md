@@ -2,9 +2,9 @@
 title: 사용자 정의 애플리케이션 작업 이해
 description: 의 내부 작업 [!DNL Asset Compute Service] 작동 방식을 이해하는 데 도움이 되는 사용자 정의 애플리케이션.
 exl-id: a3ee6549-9411-4839-9eff-62947d8f0e42
-source-git-commit: 5257e091730f3672c46dfbe45c3e697a6555e6b1
+source-git-commit: f15b9819d3319d22deccdf7e39c0f72728baaa39
 workflow-type: tm+mt
-source-wordcount: '751'
+source-wordcount: '691'
 ht-degree: 0%
 
 ---
@@ -15,11 +15,11 @@ ht-degree: 0%
 
 ![사용자 정의 애플리케이션 워크플로](assets/customworker.svg)
 
-*그림: 를 사용하여 에셋을 처리하는 단계 [!DNL Asset Compute Service].*
+*그림: Adobe을 사용하여 에셋을 처리할 때 관련된 단계 [!DNL Asset Compute Service].*
 
 ## 등록 {#registration}
 
-클라이언트는 [`/register`](api.md#register) 에 대한 첫 번째 요청 전에 한 번 [`/process`](api.md#process-request) 수신을 위해 저널 URL을 설정하고 검색하기 위해 [!DNL Adobe I/O] Adobe Asset compute 이벤트.
+클라이언트는 [`/register`](api.md#register) 에 대한 첫 번째 요청 전에 한 번 [`/process`](api.md#process-request) Adobe 수신을 위한 저널 URL을 설정하고 검색할 수 있도록 하기 위해 [!DNL I/O Events] Adobe Asset compute 이벤트.
 
 ```sh
 curl -X POST \
@@ -70,7 +70,7 @@ curl -X POST \
 
 다음 [!DNL Asset Compute Service] 사용자 정의 응용 프로그램 렌디션 요청을 사용자 정의 응용 프로그램으로 보냅니다. 제공된 애플리케이션 URL(App Builder의 보안 웹 작업 URL)에 대한 HTTP POST을 사용합니다. 모든 요청은 HTTPS 프로토콜을 사용하여 데이터 보안을 극대화합니다.
 
-다음 [ASSET COMPUTE SDK](https://github.com/adobe/asset-compute-sdk#adobe-asset-compute-worker-sdk) 사용자 지정 애플리케이션에서 사용되는 는 HTTP POST 요청을 처리합니다. 또한 소스 다운로드, 렌디션 업로드 및 전송을 처리합니다 [!DNL Adobe I/O] 이벤트 및 오류 처리.
+다음 [ASSET COMPUTE SDK](https://github.com/adobe/asset-compute-sdk#adobe-asset-compute-worker-sdk) 사용자 지정 애플리케이션에서 사용되는 는 HTTP POST 요청을 처리합니다. 또한 소스 다운로드, 렌디션 업로드, Adobe 전송을 처리합니다 [!DNL I/O Events] 및 오류 처리.
 
 <!-- TBD: Add the application diagram. -->
 
@@ -96,7 +96,7 @@ exports.main = worker(async (source, rendition) => {
 
 ### 소스 파일 다운로드 {#download-source}
 
-사용자 정의 응용 프로그램은 로컬 파일만 처리합니다. 소스 파일 다운로드는 [ASSET COMPUTE SDK](https://github.com/adobe/asset-compute-sdk#adobe-asset-compute-worker-sdk).
+사용자 정의 응용 프로그램은 로컬 파일만 처리합니다. 다음 [ASSET COMPUTE SDK](https://github.com/adobe/asset-compute-sdk#adobe-asset-compute-worker-sdk) 는 소스 파일 다운로드를 처리합니다.
 
 ### 렌디션 만들기 {#rendition-creation}
 
@@ -112,15 +112,15 @@ SDK는 비동기 를 호출합니다 [렌디션 콜백 함수](https://github.co
 
 각 렌디션을 만들고 다음에 의해 제공된 경로를 사용하여 파일에 저장한 후 `rendition.path`, [ASSET COMPUTE SDK](https://github.com/adobe/asset-compute-sdk#adobe-asset-compute-worker-sdk) 각 렌디션을 클라우드 스토리지(AWS 또는 Azure)에 업로드합니다. 들어오는 요청에 동일한 애플리케이션 URL을 가리키는 여러 변환이 있는 경우에만 사용자 정의 애플리케이션이 동시에 여러 변환을 가져옵니다. 클라우드 스토리지로의 업로드는 각 렌디션 후 다음 렌디션에 대한 콜백을 실행하기 전에 수행됩니다.
 
-다음 `batchWorker()` 는 모든 렌디션을 실제로 처리하고 모두 처리된 후에만 해당 렌디션을 업로드하므로 다른 동작을 수행합니다.
+다음 `batchWorker()` 은(는) 다른 동작을 합니다. 모든 렌디션을 처리하고, 모든 렌디션이 처리된 후에만 업로드합니다.
 
 ## [!DNL Adobe I/O] 이벤트 {#aio-events}
 
-SDK에서 다음을 전송함 [!DNL Adobe I/O] 각 렌디션에 대한 이벤트. 다음 이벤트는 다음 중 하나입니다. `rendition_created` 또는 `rendition_failed` 결과에 따라. 다음을 참조하십시오 [비동기 이벤트 asset compute](api.md#asynchronous-events) 이벤트 세부 사항.
+SDK에서 Adobe 전송 [!DNL I/O Events] 각 렌디션에 대해 다음 이벤트는 다음 중 하나입니다. `rendition_created` 또는 `rendition_failed` 결과에 따라. 자세한 내용은 [비동기 이벤트 asset compute](api.md#asynchronous-events).
 
 ## 수신 [!DNL Adobe I/O] 이벤트 {#receive-aio-events}
 
-클라이언트가 다음을 폴링합니다. [[!DNL Adobe I/O] 이벤트 저널](https://www.adobe.io/apis/experienceplatform/events/ioeventsapi.html#/Journaling) 소비 논리에 따르면 초기 저널 URL은에 제공된 URL입니다. `/register` API 응답. 이벤트를 식별하려면 `requestId` 이벤트에 있으며 에 반환되는 것과 동일합니다. `/process`. 모든 렌디션에는 렌디션이 업로드(또는 실패)되는 즉시 전송되는 별도의 이벤트가 있습니다. 일치하는 이벤트를 수신하면 클라이언트가 결과 렌디션을 표시하거나 처리할 수 있습니다.
+클라이언트가 Adobe 폴링 [!DNL I/O Events] 소비 논리에 따른 저널. 초기 저널 URL은에 제공된 URL입니다. `/register` API 응답. 이벤트를 식별하려면 `requestId` 이벤트에 있으며 에 반환되는 것과 동일합니다. `/process`. 모든 렌디션에는 렌디션이 업로드(또는 실패)되는 즉시 전송되는 별도의 이벤트가 있습니다. 일치하는 이벤트를 받으면 클라이언트가 결과 렌디션을 표시하거나 처리할 수 있습니다.
 
 JavaScript 라이브러리 [`asset-compute-client`](https://github.com/adobe/asset-compute-client#usage) 을(를) 사용하여 저널 폴링을 간단하게 만듭니다. `waitActivation()` 메서드를 사용하여 모든 이벤트를 가져옵니다.
 
@@ -140,7 +140,7 @@ await Promise.all(events.map(event => {
 }));
 ```
 
-저널 이벤트를 가져오는 방법에 대한 자세한 내용은 [[!DNL Adobe I/O] 이벤트 API](https://www.adobe.io/apis/experienceplatform/events/ioeventsapi.html#!adobedocs/adobeio-events/master/events-api-reference.yaml).
+저널 이벤트를 가져오는 방법에 대한 자세한 내용은 Adobe 를 참조하십시오. [[!DNL I/O Events] API](https://developer.adobe.com/events/docs/guides/api/journaling_api/).
 
 <!-- TBD:
 * Illustration of the controls/data flow.
