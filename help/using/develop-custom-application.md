@@ -2,9 +2,9 @@
 title: ' [!DNL Asset Compute Service]에 대한 개발'
 description: ' [!DNL Asset Compute Service]을(를) 사용하여 사용자 지정 응용 프로그램을 만듭니다.'
 exl-id: a0c59752-564b-4bb6-9833-ab7c58a7f38e
-source-git-commit: c6f747ebd6d1b17834f1af0837609a148804f8a9
+source-git-commit: db38b9dc27505aa7e04cf58a646005fc2e0e8782
 workflow-type: tm+mt
-source-wordcount: '1507'
+source-wordcount: '1542'
 ht-degree: 0%
 
 ---
@@ -96,6 +96,10 @@ If you did not log in, refer to our troubleshooting guide to [set up credentials
    ```conf
    ASSET_COMPUTE_PRIVATE_KEY_FILE_PATH=
    ```
+
+   >[!NOTE]
+   >
+   >JWT는 더 이상 사용되지 않으며 개인 키를 다운로드할 수 없습니다. 테스트 도구를 업데이트하는 동안 OAuth를 사용하여 만든 사용자 지정 작업자를 배포할 수 있지만 devtools가 작동하지 않습니다.
 
 1. Adobe Developer Console에서 파일을 다운로드합니다. 프로젝트의 루트로 이동하고 오른쪽 상단 모서리에서 &quot;모두 다운로드&quot;를 클릭합니다. 파일 이름으로 `<namespace>-<workspace>.json`을(를) 사용하여 파일이 다운로드됩니다. 다음 중 하나를 수행하십시오.
 

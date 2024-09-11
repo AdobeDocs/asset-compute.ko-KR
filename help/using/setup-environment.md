@@ -2,9 +2,9 @@
 title: ' [!DNL Asset Compute Service]에 필요한 개발 환경 설정'
 description: 사용자 지정 코드를 만들고 테스트하려면  [!DNL Asset Compute Service] 의 개발자 환경을 설정하십시오.
 exl-id: 91c12889-01d8-4757-9bdd-f73c491cd9d5
-source-git-commit: c6f747ebd6d1b17834f1af0837609a148804f8a9
+source-git-commit: db38b9dc27505aa7e04cf58a646005fc2e0e8782
 workflow-type: tm+mt
-source-wordcount: '324'
+source-wordcount: '359'
 ht-degree: 0%
 
 ---
@@ -43,6 +43,10 @@ ht-degree: 0%
 1. [App Builder 프로젝트 만들기](https://developer.adobe.com/app-builder/docs/getting_started/first_app/). **[!UICONTROL 새 프로젝트 만들기]** > **[!UICONTROL 템플릿에서 프로젝트]**&#x200B;를 클릭합니다. App Builder을 선택합니다. `Production` 및 `Stage` 작업 영역의 새 App Builder 프로젝트를 만듭니다. 필요에 따라 `Development`과(와) 같은 추가 작업 공간을 추가합니다.
 
 1. App Builder 프로젝트에서 작업 영역을 선택하고 Asset compute에 필요한 서비스를 구독합니다. **프로젝트에 추가** > **API**&#x200B;를 클릭하고 `Asset Compute`, `IO Events` 및 `IO Events Management` 서비스를 추가하십시오. 첫 번째 API를 추가할 때 개인 키를 만들라는 메시지가 표시됩니다. 개발자 도구를 사용하여 사용자 정의 애플리케이션을 테스트하려면 이 키가 필요하므로 시스템에 이 정보를 저장하십시오.
+
+   >[!NOTE]
+   >
+   >JWT는 더 이상 사용되지 않으며 개인 키를 다운로드할 수 없습니다. 테스트 도구를 업데이트하는 동안 OAuth를 사용하여 만든 사용자 지정 작업자를 배포할 수 있지만 devtools가 작동하지 않습니다.
 
 ## 다음 단계 {#next-step}
 
