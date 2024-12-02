@@ -1,6 +1,6 @@
 ---
-title: "[!DNL Asset Compute Service] HTTP API"
-description: "[!DNL Asset Compute Service] 사용자 지정 응용 프로그램을 만들기 위한 HTTP API입니다."
+title: '[!DNL Asset Compute Service] HTTP API'
+description: 사용자 지정 응용 프로그램을 만들기 위한 [!DNL Asset Compute Service] HTTP API입니다.
 exl-id: 4b63fdf9-9c0d-4af7-839d-a95e07509750
 source-git-commit: f15b9819d3319d22deccdf7e39c0f72728baaa39
 workflow-type: tm+mt
@@ -147,7 +147,7 @@ HTTP 상태 코드는 다음과 같습니다.
 | 메서드 | `POST` |
 | 경로 | `/unregister` |
 | 헤더 `Authorization` | 모든 [권한 부여 관련 헤더](#authentication-and-authorization). |
-| 헤더 `x-request-id` | 선택 사항입니다. 클라이언트는 시스템 전반에 걸쳐 처리 요청에 대한 고유한 종단 간 식별자에 대해 이를 설정할 수 있다. |
+| 헤더 `x-request-id` | 선택 사항. 클라이언트는 시스템 전반에 걸쳐 처리 요청에 대한 고유한 종단 간 식별자에 대해 이를 설정할 수 있다. |
 | 요청 본문 | 비어 있음. |
 
 ### 응답 등록 해제 {#unregister-response}
@@ -216,7 +216,7 @@ HTTP 상태 코드는 다음과 같습니다.
 | 경로 | `/process` |
 | MIME 유형 | `application/json` |
 | 헤더 `Authorization` | 모든 [권한 부여 관련 헤더](#authentication-and-authorization). |
-| 헤더 `x-request-id` | 선택 사항입니다. 클라이언트는 고유한 종단 간 식별자를 설정하여 시스템 전반의 처리 요청을 추적할 수 있습니다. |
+| 헤더 `x-request-id` | 선택 사항. 클라이언트는 고유한 종단 간 식별자를 설정하여 시스템 전반의 처리 요청을 추적할 수 있습니다. |
 | 요청 본문 | 아래 설명된 대로 프로세스 요청 JSON 형식이어야 합니다. 처리할 에셋과 생성할 렌디션에 대한 지침을 제공합니다. |
 
 ### 프로세스 요청 JSON {#process-request-json}
@@ -377,7 +377,7 @@ HTTP 상태 코드는 다음과 같습니다.
 | `worker` | `string` | [사용자 지정 응용 프로그램](develop-custom-application.md)의 URL. `https://` URL이어야 합니다. 이 필드가 있으면 사용자 정의 응용 프로그램에서 렌디션을 만듭니다. 그런 다음 사용자 정의 애플리케이션에서 다른 모든 렌디션 설정 필드를 사용합니다. | `"https://1234.adobeioruntime.net`<br>`/api/v1/web`<br>`/example-custom-worker-master/worker"` |
 | `target` | `string` | HTTP PUT을 사용하여 생성된 렌디션을 업로드해야 하는 URL입니다. | `http://w.com/img.jpg` |
 | `target` | `object` | 생성된 렌디션에 대한 다중 부분 사전 서명된 URL 업로드 정보입니다. 이 정보는 이 [다중 부분 업로드 동작](https://jackrabbit.apache.org/oak/docs/apidocs/org/apache/jackrabbit/api/binary/BinaryUpload.html)을 사용하는 [AEM/Oak 다이렉트 이진 업로드](https://jackrabbit.apache.org/oak/docs/features/direct-binary-access.html)에 대한 것입니다.<br>필드:<ul><li>`urls`: 사전 서명된 각 부분 URL에 대해 하나씩 문자열 배열</li><li>`minPartSize`: 한 부분에 사용할 최소 크기 = url</li><li>`maxPartSize`: 한 부분에 사용할 최대 크기 = url</li></ul> | `{ "urls": [ "https://part1...", "https://part2..." ], "minPartSize": 10000, "maxPartSize": 100000 }` |
-| `userData` | `object` | 선택 사항입니다. 클라이언트가 예약된 공간을 제어하고 있는 그대로 렌디션 이벤트에 전달합니다. 클라이언트가 사용자 지정 정보를 추가하여 렌디션 이벤트를 식별할 수 있습니다. 클라이언트는 언제든지 변경할 수 있으므로 사용자 정의 애플리케이션에서 수정하거나 의존해서는 안 됩니다. | `{ ... }` |
+| `userData` | `object` | 선택 사항. 클라이언트가 예약된 공간을 제어하고 있는 그대로 렌디션 이벤트에 전달합니다. 클라이언트가 사용자 지정 정보를 추가하여 렌디션 이벤트를 식별할 수 있습니다. 클라이언트는 언제든지 변경할 수 있으므로 사용자 정의 애플리케이션에서 수정하거나 의존해서는 안 됩니다. | `{ ... }` |
 
 ### 렌디션별 필드 {#rendition-specific-fields}
 

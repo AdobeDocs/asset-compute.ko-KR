@@ -1,6 +1,6 @@
 ---
 title: ' [!DNL Asset Compute Service] 소개'
-description: "[!DNL Asset Compute Service]은(는) 복잡성을 줄이고 확장성을 개선하는 클라우드 기반 에셋 처리 서비스입니다."
+description: '[!DNL Asset Compute Service]은(는) 복잡성을 줄이고 확장성을 개선하는 클라우드 기반 에셋 처리 서비스입니다.'
 exl-id: f8c89f65-5a94-44f3-aaac-4612ae291101
 source-git-commit: c6f747ebd6d1b17834f1af0837609a148804f8a9
 workflow-type: tm+mt
