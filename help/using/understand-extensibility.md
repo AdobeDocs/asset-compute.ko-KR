@@ -15,7 +15,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->[!DNL Asset Compute Service]은(는) [!DNL Cloud Service](으)로 [!DNL Experience Manager]에 대해서만 사용할 수 있습니다.
+>[!DNL Asset Compute Service]은(는) [!DNL Cloud Service] (으)로 [!DNL Experience Manager]에 대해서만 사용할 수 있습니다.
 
 사용자 지정 응용 프로그램은 headless [Adobe Developer App Builder](https://github.com/AdobeDocs/app-builder) 앱입니다. 사용자 지정 응용 프로그램으로 [!DNL Asset Compute Service]을(를) 확장하는 방법은 [SDK Asset compute](https://github.com/adobe/asset-compute-sdk) 및 Adobe Developer App Builder 개발자 도구를 통해 간단하게 수행됩니다. 이러한 도구를 사용하여 개발자는 비즈니스 논리에 집중할 수 있습니다. 사용자 지정 응용 프로그램을 만드는 것은 일반 서버리스 Adobe [!DNL I/O Runtime] 작업을 만드는 것만큼 간단합니다. 단일 Node.js JavaScript 함수입니다. [기본 사용자 지정 응용 프로그램 예제](https://github.com/adobe/asset-compute-example-workers/blob/master/projects/worker-basic/worker-basic.js)가 이를 보여 줍니다.
 
@@ -25,7 +25,7 @@ ht-degree: 0%
 
 * Adobe Developer App Builder 도구는 컴퓨터에 설치됩니다.
 * [!DNL Experience Cloud] 조직입니다. 자세한 내용을 보려면 [App Builder 여정 시작](https://developer.adobe.com/app-builder/docs/getting_started/#acquire-access-and-credentials)(으)로 이동하십시오.
-* 경험 조직에 [!DNL Cloud Service](으)로 [!DNL Experience Manager]이(가) 활성화되어 있어야 합니다.
+* 경험 조직에 [!DNL Cloud Service] (으)로 [!DNL Experience Manager]이(가) 활성화되어 있어야 합니다.
 * [!DNL Adobe Experience Cloud] 조직은 [!DNL Adobe Developer App Builder] developer skin peek 프로그램의 일부입니다. [액세스 신청 방법](https://developer.adobe.com/app-builder/docs/overview/getting_access)(으)로 이동합니다.
 * 개발자를 위한 조직에서 개발자 역할 또는 관리자 권한을 확인합니다.
 * [[!DNL aio-cli]](https://github.com/adobe/aio-cli) Adobe이 로컬에 설치되어 있는지 확인하십시오.

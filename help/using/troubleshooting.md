@@ -22,7 +22,7 @@ asset compute 서비스 관련 문제를 해결하는 데 도움이 되는 몇 �
 
 ## Adobe [!DNL aio-cli]을(를) 통해 로그인 문제 {#login-via-aio-cli}
 
-Adobe [!DNL aio-cli]](https://developer.adobe.com/app-builder/docs/getting_started/first_app/#3-signing-in-from-cli)을(를) 통해 [!DNL Adobe Developer Console] [에 로그인하는 데 문제가 있는 경우 사용자 지정 응용 프로그램을 개발, 테스트 및 배포하는 데 필요한 자격 증명을 수동으로 추가하십시오.
+Adobe [!DNL aio-cli][&#128279;](https://developer.adobe.com/app-builder/docs/getting_started/first_app/#3-signing-in-from-cli)을(를) 통해 [!DNL Adobe Developer Console] 에 로그인하는 데 문제가 있는 경우 사용자 지정 응용 프로그램을 개발, 테스트 및 배포하는 데 필요한 자격 증명을 수동으로 추가하십시오.
 
 1. [Adobe Developer Console](https://developer.adobe.com/console/user/servicesandapis)에서 Adobe Developer App Builder 프로젝트 및 작업 영역으로 이동한 다음 오른쪽 상단에서 **[!UICONTROL 다운로드]**&#x200B;를 누릅니다. 이 파일을 열고 이 JSON을 컴퓨터의 안전한 위치에 저장합니다.
 

@@ -11,11 +11,11 @@ ht-degree: 0%
 
 # [!DNL Asset Compute Service]의 아키텍처 {#overview}
 
-[!DNL Asset Compute Service]은(는) 서버를 사용하지 않는 Adobe [!DNL `I/O Runtime`] 플랫폼 위에 만들어집니다. 자산에 대한 Adobe Sensei 컨텐츠 서비스 지원을 제공합니다. 호출하는 클라이언트([!DNL Cloud Service](으)로서 [!DNL Experience Manager]만 지원됨)에는 자산에 대해 검색한 Adobe Sensei 생성 정보가 제공됩니다. 반환된 정보는 JSON 형식입니다.
+[!DNL Asset Compute Service]은(는) 서버를 사용하지 않는 Adobe [!DNL `I/O Runtime`] 플랫폼 위에 만들어집니다. 자산에 대한 Adobe Sensei 컨텐츠 서비스 지원을 제공합니다. 호출하는 클라이언트([!DNL Cloud Service] (으)로서 [!DNL Experience Manager]만 지원됨)에는 자산에 대해 검색한 Adobe Sensei 생성 정보가 제공됩니다. 반환된 정보는 JSON 형식입니다.
 
 [!DNL Adobe Developer App Builder]을(를) 기반으로 사용자 지정 응용 프로그램을 만들어 [!DNL Asset Compute Service]을(를) 확장할 수 있습니다. 이러한 사용자 지정 응용 프로그램은 [!DNL Project Adobe Developer App Builder] Headless 앱이며 사용자 지정 전환 도구를 추가하거나 외부 API를 호출하여 이미지 작업을 수행하는 등의 작업을 수행합니다.
 
-[!DNL Project Adobe Developer App Builder]은(는) Adobe [!DNL `I/O Runtime`]에서 사용자 지정 웹 응용 프로그램을 빌드하고 배포하는 프레임워크입니다. 사용자 정의 응용 프로그램을 만들기 위해 개발자는 [!DNL React Spectrum](Adobe의 UI 툴킷)을 활용하고 마이크로서비스를 만들고 사용자 정의 이벤트를 만들고 API를 오케스트레이션할 수 있습니다. [Adobe Developer App Builder 설명서](https://developer.adobe.com/app-builder/docs/overview)를 참조하세요.
+[!DNL Project Adobe Developer App Builder]은(는) Adobe [!DNL `I/O Runtime`]에서 사용자 지정 웹 응용 프로그램을 빌드하고 배포하는 프레임워크입니다. 사용자 정의 응용 프로그램을 만들기 위해 개발자는 [!DNL React Spectrum] (Adobe의 UI 툴킷)을 활용하고 마이크로서비스를 만들고 사용자 정의 이벤트를 만들고 API를 오케스트레이션할 수 있습니다. [Adobe Developer App Builder 설명서](https://developer.adobe.com/app-builder/docs/overview)를 참조하세요.
 
 아키텍처의 기반이 되는 기반에는 다음이 포함됩니다.
 
@@ -35,7 +35,7 @@ ht-degree: 0%
 
 * 특정 유형의 파일 형식이나 대상 변환을 전문으로 하는 **자산을 처리하는 응용 프로그램**. 개념적으로 응용 프로그램은 UNIX® 파이프 개념과 같습니다. 입력 파일은 하나 이상의 출력 파일로 변환됩니다.
 
-* **일반 응용 프로그램 라이브러리 [2}**&#x200B;에서 일반 작업을 처리합니다. ](https://github.com/adobe/asset-compute-sdk) 예를 들어 소스 파일 다운로드, 렌디션 업로드, 오류 보고, 이벤트 전송 및 모니터링이 있습니다. 이러한 설계는 로컬 파일 시스템에 국한된 상호 작용으로, 서버를 사용하지 않는 개념에 따라 애플리케이션을 간편하게 개발할 수 있도록 합니다.
+* **일반 응용 프로그램 라이브러리 [2&rbrace;**&#x200B;에서 일반 작업을 처리합니다. ](https://github.com/adobe/asset-compute-sdk) 예를 들어 소스 파일 다운로드, 렌디션 업로드, 오류 보고, 이벤트 전송 및 모니터링이 있습니다. 이러한 설계는 로컬 파일 시스템에 국한된 상호 작용으로, 서버를 사용하지 않는 개념에 따라 애플리케이션을 간편하게 개발할 수 있도록 합니다.
 
 <!-- TBD:
 

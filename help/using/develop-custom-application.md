@@ -83,7 +83,7 @@ If you did not log in, refer to our troubleshooting guide to [set up credentials
 
 >[!NOTE]
 >
->이 컨테이너는 [!DNL Cloud Service](으)로 [!DNL Adobe Experience Manager]의 클라우드 저장소와 별개입니다. asset compute 개발자 도구를 사용한 개발 및 테스트에만 적용됩니다.
+>이 컨테이너는 [!DNL Cloud Service] (으)로 [!DNL Adobe Experience Manager]의 클라우드 저장소와 별개입니다. asset compute 개발자 도구를 사용한 개발 및 테스트에만 적용됩니다.
 
 [지원되는 클라우드 저장소 컨테이너](https://github.com/adobe/asset-compute-devtool#prerequisites)에 액세스할 수 있어야 합니다. 이 컨테이너는 필요할 때마다 다양한 개발자가 다른 프로젝트에 일괄적으로 사용합니다.
 

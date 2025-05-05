@@ -23,7 +23,7 @@ ht-degree: 6%
 + [지원되는 파일 형식](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/assets/file-format-support)
 + [아키텍처](architecture.md)
 + [API 참조](api.md)
-+ asset compute 서비스 {#extend} 확장
++ asset compute 서비스 확장 {#extend}
    + [Compute Service 확장 정보](understand-extensibility.md)
    + [환경 설정](setup-environment.md)
    + [앱의 내부 개념 이해](custom-application-internals.md)

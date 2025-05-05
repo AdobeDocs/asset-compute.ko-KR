@@ -15,11 +15,11 @@ ht-degree: 1%
 
 개발자는 사용자 정의 에셋 애플리케이션(사용자 정의 작업자라고도 함)을 플러그인하여 사용자 정의 사용 사례를 처리할 수 있습니다. 서비스는 Adobe [!DNL I/O Runtime]에서 작동합니다. Node.js로 작성된 [!DNL Adobe Developer App Builder]개의 Headless 앱을 통해 확장할 수 있습니다. 외부 API를 호출하여 이미지 작업을 수행하거나 [!DNL Adobe Sensei] 지원을 활용하는 등의 사용자 지정 작업을 수행할 수 있습니다.
 
-[!DNL Adobe Developer App Builder]은(는) Adobe [!DNL I/O Runtime]에서 사용자 지정 웹 응용 프로그램을 빌드하고 배포하여 Adobe Experience Cloud 솔루션을 확장하는 프레임워크입니다. 사용자 정의 응용 프로그램을 만들기 위해 개발자는 [!DNL React Spectrum](Adobe의 UI 툴킷)을 활용하고 마이크로서비스를 만들고 사용자 정의 이벤트를 만들고 API를 오케스트레이션할 수 있습니다. [Adobe Developer App Builder 설명서](https://developer.adobe.com/app-builder/docs/overview/)를 참조하세요.
+[!DNL Adobe Developer App Builder]은(는) Adobe [!DNL I/O Runtime]에서 사용자 지정 웹 응용 프로그램을 빌드하고 배포하여 Adobe Experience Cloud 솔루션을 확장하는 프레임워크입니다. 사용자 정의 응용 프로그램을 만들기 위해 개발자는 [!DNL React Spectrum] (Adobe의 UI 툴킷)을 활용하고 마이크로서비스를 만들고 사용자 정의 이벤트를 만들고 API를 오케스트레이션할 수 있습니다. [Adobe Developer App Builder 설명서](https://developer.adobe.com/app-builder/docs/overview/)를 참조하세요.
 
 >[!NOTE]
 >
->현재 [!DNL Asset Compute Service]은(는) [!DNL Cloud Service](으)로 [!DNL Experience Manager]을(를) 통해서만 사용할 수 있습니다. 관리자는 [!DNL Asset Compute Service]을(를) 호출하여 처리할 자산을 전달할 수 있는 처리 프로필을 만듭니다. [자산 마이크로서비스 및 처리 프로필 사용](https://experienceleague.adobe.com/ko/docs/experience-manager-cloud-service/content/assets/manage/asset-microservices-configure-and-use)을 참조하세요.
+>현재 [!DNL Asset Compute Service]은(는) [!DNL Cloud Service] (으)로 [!DNL Experience Manager]을(를) 통해서만 사용할 수 있습니다. 관리자는 [!DNL Asset Compute Service]을(를) 호출하여 처리할 자산을 전달할 수 있는 처리 프로필을 만듭니다. [자산 마이크로서비스 및 처리 프로필 사용](https://experienceleague.adobe.com/ko/docs/experience-manager-cloud-service/content/assets/manage/asset-microservices-configure-and-use)을 참조하세요.
 
 ## [!DNL Asset Compute Service]의 지원되는 사용 사례 {#possible-use-cases-benefits}
 

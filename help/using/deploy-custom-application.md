@@ -15,7 +15,7 @@ ht-degree: 0%
 
 응용 프로그램을 다시 배포하지 않고 동일한 URL을 가져오려면 [`aio app get-url`](https://github.com/adobe/aio-cli#aio-app-get-url-action) 명령을 사용합니다.
 
-[처리 프로필  [!DNL Experience Manager] as a [!DNL Cloud Service]](https://experienceleague.adobe.com/ko/docs/experience-manager-cloud-service/content/assets/manage/asset-microservices-configure-and-use)의 URL을 사용하여 [!DNL Cloud Service](으)로 [!DNL Experience Manager]과(와) 응용 프로그램을 통합하세요.
+[처리 프로필  [!DNL Experience Manager] as a [!DNL Cloud Service]](https://experienceleague.adobe.com/ko/docs/experience-manager-cloud-service/content/assets/manage/asset-microservices-configure-and-use)의 URL을 사용하여 [!DNL Cloud Service] (으)로 [!DNL Experience Manager]과(와) 응용 프로그램을 통합하세요.
 
 App Builder 프로젝트 및 작업 영역이 작업을 사용하려는 [!DNL Cloud Service] 환경인 [!DNL Experience Manager]에 해당하는지 확인하십시오. 여기에는 개발, 스테이징 및 프로덕션을 위한 다양한 환경이 있습니다. Adobe Developer App Builder 애플리케이션의 루트에 있는 ENV 파일 내에 정의된 `AIO_runtime_*` 자격 증명을 확인하여 환경을 확인할 수 있습니다. 예를 들어 `Stage` 작업 영역에 배포하려면 `AIO_runtime_namespace`의 형식이 `xxxxxx_xxxxxxxxx_stage`입니다. [!DNL Experience Manager]을(를) [!DNL Cloud Service] 프로덕션 환경으로 통합하려면 Adobe Developer App Builder `Production` 작업 영역의 응용 프로그램 URL을 사용하십시오.
 
