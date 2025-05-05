@@ -373,7 +373,7 @@ HTTP 상태 코드는 다음과 같습니다.
 
 | 이름 | 유형 | 설명 | 예 |
 |-------------------|----------|-------------|---------|
-| `fmt` | `string` | 변환 대상 형식은 텍스트 추출의 경우 `text`이고 XMP 메타데이터를 xml로 추출하는 경우 `xmp`일 수도 있습니다. [지원되는 형식](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/assets/file-format-support)을 참조하세요. | `png` |
+| `fmt` | `string` | 변환 대상 형식은 텍스트 추출의 경우 `text`이고 XMP 메타데이터를 xml로 추출하는 경우 `xmp`일 수도 있습니다. [지원되는 형식](https://experienceleague.adobe.com/ko/docs/experience-manager-cloud-service/content/assets/file-format-support)을 참조하세요. | `png` |
 | `worker` | `string` | [사용자 지정 응용 프로그램](develop-custom-application.md)의 URL. `https://` URL이어야 합니다. 이 필드가 있으면 사용자 정의 응용 프로그램에서 렌디션을 만듭니다. 그런 다음 사용자 정의 애플리케이션에서 다른 모든 렌디션 설정 필드를 사용합니다. | `"https://1234.adobeioruntime.net`<br>`/api/v1/web`<br>`/example-custom-worker-master/worker"` |
 | `target` | `string` | HTTP PUT을 사용하여 생성된 렌디션을 업로드해야 하는 URL입니다. | `http://w.com/img.jpg` |
 | `target` | `object` | 생성된 렌디션에 대한 다중 부분 사전 서명된 URL 업로드 정보입니다. 이 정보는 이 [다중 부분 업로드 동작](https://jackrabbit.apache.org/oak/docs/apidocs/org/apache/jackrabbit/api/binary/BinaryUpload.html)을 사용하는 [AEM/Oak 다이렉트 이진 업로드](https://jackrabbit.apache.org/oak/docs/features/direct-binary-access.html)에 대한 것입니다.<br>필드:<ul><li>`urls`: 사전 서명된 각 부분 URL에 대해 하나씩 문자열 배열</li><li>`minPartSize`: 한 부분에 사용할 최소 크기 = url</li><li>`maxPartSize`: 한 부분에 사용할 최대 크기 = url</li></ul> | `{ "urls": [ "https://part1...", "https://part2..." ], "minPartSize": 10000, "maxPartSize": 100000 }` |
@@ -381,7 +381,7 @@ HTTP 상태 코드는 다음과 같습니다.
 
 ### 렌디션별 필드 {#rendition-specific-fields}
 
-현재 지원되는 파일 형식 목록은 [지원되는 파일 형식](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/assets/file-format-support)을 참조하십시오.
+현재 지원되는 파일 형식 목록은 [지원되는 파일 형식](https://experienceleague.adobe.com/ko/docs/experience-manager-cloud-service/content/assets/file-format-support)을 참조하십시오.
 
 | 이름 | 유형 | 설명 | 예 |
 |-------------------|----------|-------------|---------|

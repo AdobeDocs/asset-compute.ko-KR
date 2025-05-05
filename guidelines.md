@@ -31,7 +31,7 @@ ht-degree: 33%
 
 설명서를 개선하기 위한 모든 아이디어를 기여로 제출할 수 있습니다. 그러나 주석, 문제 및 가져오기 요청은 *기여* 만 해당. 제품을 사용하거나, 프로젝트를 구현하거나, 기술적인 문제를 해결하는 방법에 대한 질문에 답하지 않습니다.
 
-사용 또는 기술 오류에 대한 질문은 다음을 통해 일반적인 지원 프로세스를 통해 보고해야 합니다 [[!DNL Experience Manager] 고객 지원 포털](https://experienceleague.adobe.com/?support-solution=Experience+Manager#home) 또는에서 논의됨 [[!DNL Experience Manager] 커뮤니티](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-manager/ct-p/adobe-experience-manager-community).
+사용 또는 기술 오류에 대한 질문은 다음을 통해 일반적인 지원 프로세스를 통해 보고해야 합니다 [[!DNL Experience Manager] 고객 지원 포털](https://experienceleague.adobe.com/ko?support-solution=Experience+Manager#home) 또는에서 논의됨 [[!DNL Experience Manager] 커뮤니티](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-manager/ct-p/adobe-experience-manager-community?profile.language=ko).
 
 ***설명서 기여는 Adobe 고객 지원 센터를 대체할 수 없습니다*** 그리고 지원 관련 질문에 대한 답변을 구하는 기여는 거부됩니다.
 

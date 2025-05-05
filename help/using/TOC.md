@@ -20,7 +20,7 @@ ht-degree: 6%
 
 + [Asset compute 서비스 사용 안내서](home.md)
 + [개요](introduction.md)
-+ [지원되는 파일 형식](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/assets/file-format-support)
++ [지원되는 파일 형식](https://experienceleague.adobe.com/ko/docs/experience-manager-cloud-service/content/assets/file-format-support)
 + [아키텍처](architecture.md)
 + [API 참조](api.md)
 + asset compute 서비스 확장 {#extend}

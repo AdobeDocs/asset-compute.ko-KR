@@ -25,4 +25,4 @@ App Builder 프로젝트 및 작업 영역이 작업을 사용하려는 [!DNL Cl
 
 >[!MORELIKETHIS]
 >
->* [환경 이해 및 관리 [!DNL Experience Manager] as a [!DNL Cloud Service]](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/implementing/using-cloud-manager/manage-environments).
+>* [환경 이해 및 관리 [!DNL Experience Manager] as a [!DNL Cloud Service]](https://experienceleague.adobe.com/ko/docs/experience-manager-cloud-service/content/implementing/using-cloud-manager/manage-environments).
