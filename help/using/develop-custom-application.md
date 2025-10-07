@@ -2,9 +2,9 @@
 title: ' [!DNL Asset Compute Service]에 대한 개발'
 description: ' [!DNL Asset Compute Service]을(를) 사용하여 사용자 지정 응용 프로그램을 만듭니다.'
 exl-id: a0c59752-564b-4bb6-9833-ab7c58a7f38e
-source-git-commit: db38b9dc27505aa7e04cf58a646005fc2e0e8782
+source-git-commit: 94fd8c0888185f64825046b7999655e9501a71fe
 workflow-type: tm+mt
-source-wordcount: '1542'
+source-wordcount: '1489'
 ht-degree: 0%
 
 ---
@@ -19,13 +19,13 @@ ht-degree: 0%
 
 ## 사용자 정의 애플리케이션 만들기 {#create-custom-application}
 
-로컬에 [Adobe aio-cli](https://github.com/adobe/aio-cli)가 설치되어 있는지 확인하십시오.
+로컬에 [Adobe aio-cli](https://github.com/adobe/aio-cli)를 설치해야 합니다.
 
 1. 사용자 지정 응용 프로그램을 만들려면 [App Builder 프로젝트를 만듭니다](https://developer.adobe.com/app-builder/docs/getting_started/first_app/#4-bootstrapping-new-app-using-the-cli). 이렇게 하려면 터미널에서 `aio app init <app-name>`을(를) 실행하십시오.
 
    아직 로그인하지 않은 경우, 이 명령은 Adobe ID으로 [Adobe Developer Console](https://developer.adobe.com/console/user/servicesandapis)에 로그인하도록 요구하는 브라우저 메시지를 표시합니다. CLI에서 로그인하는 방법에 대한 자세한 내용은 [여기](https://developer.adobe.com/app-builder/docs/getting_started/first_app/#3-signing-in-from-cli)를 참조하십시오.
 
-   Adobe은 먼저 로그인할 것을 권장합니다. 문제가 있는 경우 [지침에 따라 ](https://developer.adobe.com/app-builder/docs/getting_started/first_app/#42-developer-is-not-logged-in-as-enterprise-organization-user)에 로그인하지 않고 앱을 만듭니다.
+   Adobe은 먼저 로그인하는 것을 권장합니다. 문제가 있는 경우 [지침에 따라 ](https://developer.adobe.com/app-builder/docs/getting_started/first_app/#42-developer-is-not-logged-in-as-enterprise-organization-user)에 로그인하지 않고 앱을 만듭니다.
 
 1. 로그인 후 CLI의 안내에 따라 응용 프로그램에 사용할 `Organization`, `Project` 및 `Workspace`을(를) 선택하십시오. [환경을 설정](setup-environment.md)할 때 만든 프로젝트 및 작업 영역을 선택하십시오. `Which extension point(s) do you wish to implement ?` 메시지가 표시되면 `DX Asset Compute Worker`을(를) 선택해야 합니다.
 
@@ -64,7 +64,7 @@ ht-degree: 0%
 
    App Builder 앱의 [기본 구성 요소](https://developer.adobe.com/app-builder/docs/getting_started/first_app/#5-anatomy-of-an-app-builder-application)에 대해 읽어 보십시오.
 
-   템플릿 응용 프로그램은 응용 프로그램 표현물의 업로드, 다운로드 및 오케스트레이션에 Adobe [Asset compute SDK](https://github.com/adobe/asset-compute-sdk#asset-compute-sdk)를 활용하므로 개발자는 사용자 지정 응용 프로그램 논리만 구현하면 됩니다. `actions/<worker-name>` 폴더 내에서 `index.js` 파일은 사용자 지정 응용 프로그램 코드를 추가할 위치입니다.
+   템플릿 응용 프로그램은 Adobe의 [Asset Compute SDK](https://github.com/adobe/asset-compute-sdk#asset-compute-sdk)을(를) 사용하여 응용 프로그램 표현물을 업로드, 다운로드 및 오케스트레이션하므로 개발자는 사용자 지정 응용 프로그램 논리만 구현하면 됩니다. `actions/<worker-name>` 폴더 내에서 `index.js` 파일은 사용자 지정 응용 프로그램 코드를 추가할 위치입니다.
 
 사용자 지정 응용 프로그램에 대한 예제와 아이디어는 [사용자 지정 응용 프로그램 예제](#try-sample)를 참조하십시오.
 
@@ -83,24 +83,24 @@ If you did not log in, refer to our troubleshooting guide to [set up credentials
 
 >[!NOTE]
 >
->이 컨테이너는 [!DNL Cloud Service] (으)로 [!DNL Adobe Experience Manager]의 클라우드 저장소와 별개입니다. asset compute 개발자 도구를 사용한 개발 및 테스트에만 적용됩니다.
+>이 컨테이너는 [!DNL Adobe Experience Manager]&#x200B;(으)로 [!DNL Cloud Service]의 클라우드 저장소와 별개입니다. Asset Compute 개발자 도구를 사용한 개발 및 테스트에만 적용됩니다.
 
 [지원되는 클라우드 저장소 컨테이너](https://github.com/adobe/asset-compute-devtool#prerequisites)에 액세스할 수 있어야 합니다. 이 컨테이너는 필요할 때마다 다양한 개발자가 다른 프로젝트에 일괄적으로 사용합니다.
 
 #### ENV 파일에 자격 증명 추가 {#add-credentials-env-file}
 
 `.env` 파일에 개발 도구에 대한 후속 자격 증명을 삽입합니다. 파일은 App Builder 프로젝트의 루트에 있습니다.
+<!--
+1. Add the absolute path to the private key file created while adding services to your App Builder Project:
 
-1. App Builder 프로젝트에 서비스를 추가하는 동안 만든 개인 키 파일에 대한 절대 경로를 추가합니다.
-
-   ```conf
-   ASSET_COMPUTE_PRIVATE_KEY_FILE_PATH=
-   ```
+    ```conf
+    ASSET_COMPUTE_PRIVATE_KEY_FILE_PATH=
+    ```
 
    >[!NOTE]
    >
-   >JWT는 더 이상 사용되지 않으며 개인 키를 다운로드할 수 없습니다. 테스트 도구를 업데이트하는 동안 OAuth를 사용하여 만든 사용자 지정 작업자를 배포할 수 있지만 devtools가 작동하지 않습니다.
-
+   >JWT is deprecated and Private Key is not available for download. While we are working on updating the testing tools, note that custom workers created using OAuth can be deployed but devtools would not work.
+-->
 1. Adobe Developer Console에서 파일을 다운로드합니다. 프로젝트의 루트로 이동하고 오른쪽 상단 모서리에서 &quot;모두 다운로드&quot;를 클릭합니다. 파일 이름으로 `<namespace>-<workspace>.json`을(를) 사용하여 파일이 다운로드됩니다. 다음 중 하나를 수행하십시오.
 
    * 파일 이름을 `console.json`(으)로 변경하고 프로젝트의 루트로 이동합니다.
@@ -131,7 +131,7 @@ If you did not log in, refer to our troubleshooting guide to [set up credentials
 
 ## 애플리케이션 실행 {#run-custom-application}
 
-asset compute 개발자 도구를 사용하여 응용 프로그램을 실행하기 전에 [자격 증명](#developer-tool-credentials)을 올바르게 구성하십시오.
+Asset Compute 개발자 도구를 사용하여 응용 프로그램을 실행하기 전에 [자격 증명](#developer-tool-credentials)을 올바르게 구성하십시오.
 
 응용 프로그램을 개발자 도구에서 실행하려면 `aio app run` 명령을 사용합니다. 작업을 Adobe [!DNL I/O Runtime]에 배포하고 로컬 컴퓨터에서 개발 도구를 시작합니다. 이 도구는 개발 중에 애플리케이션 요청을 테스트하는 데 사용됩니다. 다음은 렌디션 요청의 예입니다.
 
@@ -146,11 +146,11 @@ asset compute 개발자 도구를 사용하여 응용 프로그램을 실행하�
 
 >[!NOTE]
 >
->`run` 명령과 함께 `--local` 플래그를 사용하지 마십시오. [!DNL Asset Compute] 사용자 지정 응용 프로그램 및 Asset compute 개발자 도구에서는 작동하지 않습니다. 사용자 지정 응용 프로그램은 개발자의 로컬 컴퓨터에서 실행 중인 작업에 액세스할 수 없는 [!DNL Asset Compute] 서비스에 의해 호출됩니다.
+>`--local` 명령과 함께 `run` 플래그를 사용하지 마십시오. [!DNL Asset Compute] 사용자 지정 응용 프로그램 및 Asset Compute 개발자 도구에서는 작동하지 않습니다. 사용자 지정 응용 프로그램은 개발자의 로컬 컴퓨터에서 실행 중인 작업에 액세스할 수 없는 [!DNL Asset Compute] 서비스에 의해 호출됩니다.
 
 응용 프로그램을 테스트하고 디버깅하는 방법은 [여기](test-custom-application.md)를 참조하세요. 사용자 지정 응용 프로그램 개발을 마치면 [사용자 지정 응용 프로그램을 배포](deploy-custom-application.md)합니다.
 
-## Adobe에서 제공한 샘플 응용 프로그램을 사용해 보십시오. {#try-sample}
+## Adobe에서 제공하는 샘플 애플리케이션을 사용해 보십시오. {#try-sample}
 
 다음은 사용자 정의 응용 프로그램의 예입니다.
 
@@ -226,7 +226,7 @@ exports.main = worker(async function (source, rendition) {
 
 ## 인증 및 권한 부여 지원 {#authentication-authorization-support}
 
-기본적으로 Asset compute 사용자 지정 응용 프로그램에는 App Builder 프로젝트에 대한 권한 부여 및 인증 검사가 제공됩니다. `manifest.yml`에서 `require-adobe-auth` 주석을 `true`(으)로 설정하여 사용할 수 있습니다.
+기본적으로 Asset Compute 사용자 지정 응용 프로그램에는 App Builder 프로젝트에 대한 권한 부여 및 인증 검사가 제공됩니다. `require-adobe-auth`에서 `true` 주석을 `manifest.yml`(으)로 설정하여 사용할 수 있습니다.
 
 ### 다른 Adobe API 액세스 {#access-adobe-apis}
 
@@ -245,7 +245,7 @@ const orgId = params.auth.orgId; // Experience Cloud Organization
 
 다른 외부 서비스에 대한 자격 증명을 처리하려면 해당 자격 증명을 작업에 대한 기본 매개 변수로 전달합니다. 전송 중 자동으로 암호화됩니다. 자세한 내용은 [Adobe I/O Runtime 개발자 안내서에서 작업 만들기](https://developer.adobe.com/runtime/docs/guides/using/creating_actions/)를 참조하십시오. 그런 다음 배포 중에 환경 변수를 사용하여 설정하십시오. 이러한 매개 변수는 작업 내의 `params` 개체에서 액세스할 수 있습니다.
 
-`manifest.yml`의 `inputs` 내에서 기본 매개 변수를 설정합니다.
+`inputs`의 `manifest.yml` 내에서 기본 매개 변수를 설정합니다.
 
 ```yaml
 packages:
@@ -278,7 +278,7 @@ const key = params.secretKey;
 
 ## 애플리케이션 크기 조정 {#sizing-workers}
 
-응용 프로그램이 [!DNL I/O Runtime] Adobe의 컨테이너에서 `manifest.yml`을(를) 통해 구성할 수 있는 [limits](https://developer.adobe.com/runtime/docs/guides/using/system_settings/)을(를) 사용하여 실행됩니다.
+응용 프로그램은 Adobe [!DNL I/O Runtime]의 컨테이너에서 [을(를) 통해 구성할 수 있는 ](https://developer.adobe.com/runtime/docs/guides/using/system_settings/)limits`manifest.yml`을(를) 사용하여 실행됩니다.
 
 ```yaml
     actions:
@@ -290,14 +290,14 @@ const key = params.secretKey;
           concurrency: 1
 ```
 
-asset compute 애플리케이션에서 수행하는 광범위한 처리로 인해 최적의 성능(바이너리 자산을 처리할 수 있을 만큼 큼)과 효율성(사용하지 않는 컨테이너 메모리로 인해 리소스를 낭비하지 않음)을 위해 이러한 제한을 조정해야 합니다.
+Asset Compute 애플리케이션에서 수행하는 광범위한 처리로 인해 최적의 성능(바이너리 자산을 처리할 수 있을 만큼 큼)과 효율성(사용하지 않는 컨테이너 메모리로 인해 리소스 낭비 방지)을 위해 이러한 제한을 조정해야 합니다.
 
 런타임의 작업에 대한 기본 시간 제한은 1분이지만 `timeout` 제한(밀리초)을 설정하여 늘릴 수 있습니다. 더 큰 파일을 처리해야 하는 경우에는 이 시간을 늘립니다. 소스를 다운로드하고 파일을 처리하며 렌디션을 업로드하는 데 소요되는 총 시간을 고려합니다. 작업이 시간 초과된 경우, 즉 지정된 시간 제한 전에 활성화를 반환하지 않으면 런타임에서 컨테이너를 폐기하고 재사용하지 않습니다.
 
-기본적으로 asset compute 애플리케이션은 네트워크 및 디스크 입력 또는 출력 바인딩되는 경향이 있습니다. 소스 파일을 먼저 다운로드해야 합니다. 처리는 리소스를 많이 사용하므로 결과 렌디션이 다시 업로드되는 경우가 많습니다.
+기본적으로 Asset Compute 애플리케이션은 네트워크 및 디스크 입력 또는 출력에 바인딩되는 경향이 있습니다. 소스 파일을 먼저 다운로드해야 합니다. 처리는 리소스를 많이 사용하므로 결과 렌디션이 다시 업로드되는 경우가 많습니다.
 
-`memorySize` 매개 변수를 사용하여 작업 컨테이너에 할당된 메모리를 MB로 지정할 수 있습니다. 현재 이 매개 변수는 또한 컨테이너에 액세스하는 CPU 양을 정의하며, 가장 중요한 것은 런타임 사용 비용의 주요 요소입니다(컨테이너가 클수록 더 많은 비용). 처리에서 더 많은 메모리 또는 CPU가 필요한 경우 여기에 더 큰 값을 사용하십시오. 그러나 컨테이너가 클수록 전체 처리량이 감소하므로 리소스를 낭비하지 않도록 주의하십시오.
+`memorySize` 매개 변수를 사용하여 작업 컨테이너에 할당된 메모리를 MB로 지정할 수 있습니다. 현재 이 매개 변수는 CPU에서 컨테이너에 액세스하는 양을 정의하며, 가장 중요한 것은 런타임 사용 비용의 주요 요소입니다(컨테이너가 클수록 더 많은 비용). 처리에서 더 많은 메모리나 CPU이 필요한 경우 여기에 더 큰 값을 사용하십시오. 컨테이너가 클수록 전체 처리량이 감소하므로 리소스를 낭비하지 마십시오.
 
-또한 `concurrency` 설정을 사용하여 컨테이너 내에서 작업 동시성을 제어할 수 있습니다. 이 설정은 단일 컨테이너(동일한 작업)가 받는 동시 활성화 수입니다. 이 모델에서 작업 컨테이너는 해당 제한까지 여러 동시 요청을 수신하는 Node.js 서버와 같습니다. 런타임의 기본값 `memorySize`이(가) 200MB로 설정되어 더 작은 App Builder 작업에 적합합니다. asset compute 애플리케이션의 경우, 이 기본값은 더 무거운 로컬 처리 및 디스크 사용으로 인해 과도할 수 있습니다. 일부 응용 프로그램은 구현에 따라 동시 활동에서 잘 작동하지 않을 수도 있습니다. asset compute SDK를 사용하면 파일을 다른 고유 폴더에 작성하여 활성화를 구분할 수 있습니다.
+또한 `concurrency` 설정을 사용하여 컨테이너 내에서 작업 동시성을 제어할 수 있습니다. 이 설정은 단일 컨테이너(동일한 작업)가 받는 동시 활성화 수입니다. 이 모델에서 작업 컨테이너는 해당 제한까지 여러 동시 요청을 수신하는 Node.js 서버와 같습니다. 런타임의 기본값 `memorySize`이(가) 200MB로 설정되어 더 작은 App Builder 작업에 적합합니다. Asset Compute 애플리케이션의 경우, 로컬 처리 및 디스크 사용량이 많기 때문에 이 기본값이 과도할 수 있습니다. 일부 응용 프로그램은 구현에 따라 동시 활동에서 잘 작동하지 않을 수도 있습니다. Asset Compute SDK을 사용하면 파일을 다른 고유 폴더에 작성하여 활성화를 구분할 수 있습니다.
 
 응용 프로그램을 테스트하여 `concurrency` 및 `memorySize`에 대한 최적의 숫자를 찾습니다. 컨테이너가 크면 = 메모리 제한이 클수록 더 많은 동시성을 허용할 수 있지만 더 낮은 트래픽에 낭비될 수도 있습니다.
