@@ -2,7 +2,7 @@
 title: ' [!DNL Asset Compute Service] 사용자 지정 응용 프로그램 테스트 및 디버그'
 description: ' [!DNL Asset Compute Service] 사용자 지정 응용 프로그램을 테스트하고 디버그합니다.'
 exl-id: c2534904-0a07-465e-acea-3cb578d3bc08
-source-git-commit: c6f747ebd6d1b17834f1af0837609a148804f8a9
+source-git-commit: f199cecfe4409e2370b30783f984062196dd807d
 workflow-type: tm+mt
 source-wordcount: '775'
 ht-degree: 0%
@@ -25,13 +25,13 @@ To run tests for a custom application, run `aio asset-compute test-worker` comma
 Document interactively running `adobe-asset-compute` commands `test-worker` and `run-worker`.
 -->
 
-이 명령은 아래 설명된 대로 프로젝트의 Asset compute 응용 프로그램 작업에 대한 사용자 지정 단위 테스트 프레임워크를 실행합니다. `package.json` 파일의 구성을 통해 연결됩니다. Jest와 같은 JavaScript 단위 테스트를 수행할 수도 있습니다. `aio app test`이(가) 둘 다 실행됩니다.
+이 명령은 아래 설명된 대로 프로젝트의 Asset Compute 애플리케이션 작업에 대한 사용자 지정 단위 테스트 프레임워크를 실행합니다. `package.json` 파일의 구성을 통해 연결됩니다. Jest와 같은 JavaScript 단위 테스트를 수행할 수도 있습니다. `aio app test`이(가) 둘 다 실행됩니다.
 
 [aio-cli-plugin-asset-compute](https://github.com/adobe/aio-cli-plugin-asset-compute#install-as-local-devdependency) 플러그인은 빌드/테스트 시스템에 설치할 필요가 없도록 사용자 지정 응용 프로그램 앱에 개발 종속성으로 포함되어 있습니다.
 
 ### 애플리케이션 단위 테스트 프레임워크 {#unit-test-framework}
 
-asset compute 애플리케이션 단위 테스트 프레임워크를 사용하면 코드를 작성하지 않고도 애플리케이션을 테스트할 수 있습니다. 응용 프로그램의 소스 대 렌디션 파일 원칙에 의존합니다. 테스트 소스 파일, 선택적 매개 변수, 예상 표현물 및 사용자 정의 유효성 검사 스크립트를 사용하여 테스트 사례를 정의하기 위해 특정 파일 및 폴더 구조를 설정해야 합니다. 기본적으로 렌디션은 바이트 동일성과 비교됩니다. 또한 외부 HTTP 서비스는 간단한 JSON 파일을 사용하여 쉽게 조롱할 수 있습니다.
+Asset Compute 애플리케이션 단위 테스트 프레임워크를 사용하면 코드를 작성하지 않고도 애플리케이션을 테스트할 수 있습니다. 응용 프로그램의 소스 대 렌디션 파일 원칙에 의존합니다. 테스트 소스 파일, 선택적 매개 변수, 예상 표현물 및 사용자 정의 유효성 검사 스크립트를 사용하여 테스트 사례를 정의하기 위해 특정 파일 및 폴더 구조를 설정해야 합니다. 기본적으로 렌디션은 바이트 동일성과 비교됩니다. 또한 외부 HTTP 서비스는 간단한 JSON 파일을 사용하여 쉽게 조롱할 수 있습니다.
 
 ### 테스트 추가 {#add-tests}
 
@@ -84,7 +84,7 @@ test/
         mock-<HOST_NAME2>.json
 ```
 
-모의 파일은 JSON 형식의 http 응답입니다. 자세한 내용은 [이 설명서](https://www.mock-server.com/mock_server/creating_expectations.html)를 참조하세요. 모의할 호스트 이름이 여러 개 있는 경우 `mock-<mocked-host>.json`개의 파일을 여러 개 정의하십시오. 다음은 이름이 `mock-google.com.json`인 `google.com`의 샘플 모의 파일입니다.
+모의 파일은 JSON 형식의 http 응답입니다. 자세한 내용은 [이 설명서](https://www.mock-server.com/mock_server/creating_expectations.html)를 참조하세요. 모의할 호스트 이름이 여러 개 있는 경우 `mock-<mocked-host>.json`개의 파일을 여러 개 정의하십시오. 다음은 이름이 `google.com`인 `mock-google.com.json`의 샘플 모의 파일입니다.
 
 ```json
 [{
@@ -135,11 +135,11 @@ tests/
 
 ### 테스트 예상 오류 {#test-unexpected-errors}
 
-오류 테스트 사례에는 필요한 `rendition.*` 파일이 포함되지 않아야 하며 `params.json` 파일 내에 필요한 `errorReason`을(를) 정의해야 합니다.
+오류 테스트 사례에는 필요한 `rendition.*` 파일이 포함되지 않아야 하며 `errorReason` 파일 내에 필요한 `params.json`을(를) 정의해야 합니다.
 
 >[!NOTE]
 >
->테스트 사례에 필요한 `rendition.*` 파일이 포함되어 있지 않고 `params.json` 파일 내에 필요한 `errorReason`을(를) 정의하지 않으면 `errorReason`의 오류 사례로 간주됩니다.
+>테스트 사례에 필요한 `rendition.*` 파일이 포함되어 있지 않고 `errorReason` 파일 내에 필요한 `params.json`을(를) 정의하지 않으면 `errorReason`의 오류 사례로 간주됩니다.
 
 오류 테스트 사례 구조:
 
@@ -158,13 +158,13 @@ tests/
 }
 ```
 
-[Asset compute 오류 이유](https://github.com/adobe/asset-compute-commons#error-reasons)에 대한 전체 목록 및 설명을 참조하세요.
+[Asset Compute 오류 이유](https://github.com/adobe/asset-compute-commons#error-reasons)에 대한 전체 목록 및 설명을 참조하세요.
 
 ## 사용자 지정 응용 프로그램 디버깅 {#debug-custom-worker}
 
 다음 단계에서는 Visual Studio 코드를 사용하여 사용자 지정 응용 프로그램을 디버깅하는 방법을 보여 줍니다. 이를 통해 라이브 로그, 히트 중단점 및 코드를 단계별로 볼 수 있을 뿐만 아니라 활성화 시마다 로컬 코드 변경 사항을 실시간으로 다시 로드할 수 있습니다.
 
-`aio`은(는) 이러한 단계를 대부분 자동화합니다. [Adobe Developer App Builder 설명서](https://developer.adobe.com/app-builder/docs/getting_started/first_app)의 응용 프로그램 디버깅 섹션으로 이동합니다. 현재 아래 단계에는 해결 방법이 포함되어 있습니다.
+`aio`은(는) 이러한 단계를 대부분 자동화합니다. [Adobe Developer App Builder 설명서](https://developer.adobe.com/app-builder/docs/get_started/app_builder_get_started/first-app#)의 응용 프로그램 디버깅 섹션으로 이동합니다. 현재 아래 단계에는 해결 방법이 포함되어 있습니다.
 
 1. GitHub에서 최신 [wskdebug](https://github.com/apache/openwhisk-wskdebug) 및 선택적 [ngrok](https://www.npmjs.com/package/ngrok)을(를) 설치합니다.
 
@@ -173,10 +173,10 @@ tests/
    npm install -g ngrok --unsafe-perm=true
    ```
 
-1. JSON 파일에서 사용자 설정에 추가합니다. 이전 Visual Studio Code Debugger를 계속 사용합니다. 새 WSKDEBUG `"debug.javascript.usePreview": false`에 [일부 문제](https://github.com/apache/openwhisk-wskdebug/issues/74)가 있습니다.
+1. JSON 파일에서 사용자 설정에 추가합니다. 이전 Visual Studio Code Debugger를 계속 사용합니다. 새 WSKDEBUG [에 ](https://github.com/apache/openwhisk-wskdebug/issues/74)일부 문제`"debug.javascript.usePreview": false`가 있습니다.
 1. `aio app run`을(를) 통해 열려 있는 앱의 인스턴스를 모두 닫습니다.
 1. `aio app deploy`을(를) 사용하여 최신 코드를 배포합니다.
-1. `aio asset-compute devtool`을(를) 사용하여 Asset compute Devtool만 실행합니다. 열어 두십시오.
+1. `aio asset-compute devtool`을(를) 사용하여 Asset Compute Devtool만 실행합니다. 열어 두십시오.
 1. Visual Studio 코드 편집기에서 다음 디버그 구성을 `launch.json`에 추가합니다.
 
    ```json
@@ -198,9 +198,9 @@ tests/
    }
    ```
 
-   `aio app deploy`의 출력에서 `ACTION NAME`을(를) 가져옵니다.
+   `ACTION NAME`의 출력에서 `aio app deploy`을(를) 가져옵니다.
 
-1. 실행/디버그 구성에서 `wskdebug worker`을(를) 선택하고 재생 아이콘을 누릅니다. **[!UICONTROL Debug Console]** 창에 **[!UICONTROL 활성화 준비]**&#x200B;가 표시될 때까지 시작될 때까지 기다립니다.
+1. 실행/디버깅 구성에서 `wskdebug worker`을(를) 선택하고 재생 아이콘을 누릅니다. **[!UICONTROL Debug Console]** 창에 **[!UICONTROL 활성화 준비]**&#x200B;가 표시될 때까지 시작될 때까지 기다립니다.
 
 1. Devtool에서 **[!UICONTROL 실행]**&#x200B;을 클릭합니다. Visual Studio 코드 편집기에서 실행 중인 작업을 볼 수 있으며 로그가 표시되기 시작합니다.
 

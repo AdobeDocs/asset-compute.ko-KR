@@ -2,7 +2,7 @@
 title: ' [!DNL Asset Compute Service]에 대한 개발'
 description: ' [!DNL Asset Compute Service]을(를) 사용하여 사용자 지정 응용 프로그램을 만듭니다.'
 exl-id: a0c59752-564b-4bb6-9833-ab7c58a7f38e
-source-git-commit: 94fd8c0888185f64825046b7999655e9501a71fe
+source-git-commit: 63f83ff33ac6cd090fac4f6db18000155f464643
 workflow-type: tm+mt
 source-wordcount: '1489'
 ht-degree: 0%
@@ -21,11 +21,11 @@ ht-degree: 0%
 
 로컬에 [Adobe aio-cli](https://github.com/adobe/aio-cli)를 설치해야 합니다.
 
-1. 사용자 지정 응용 프로그램을 만들려면 [App Builder 프로젝트를 만듭니다](https://developer.adobe.com/app-builder/docs/getting_started/first_app/#4-bootstrapping-new-app-using-the-cli). 이렇게 하려면 터미널에서 `aio app init <app-name>`을(를) 실행하십시오.
+1. 사용자 지정 응용 프로그램을 만들려면 [App Builder 프로젝트를 만듭니다](https://developer.adobe.com/app-builder/docs/get_started/app_builder_get_started/first-app#4-bootstrapping-new-app-using-the-cli). 이렇게 하려면 터미널에서 `aio app init <app-name>`을(를) 실행하십시오.
 
-   아직 로그인하지 않은 경우, 이 명령은 Adobe ID으로 [Adobe Developer Console](https://developer.adobe.com/console/user/servicesandapis)에 로그인하도록 요구하는 브라우저 메시지를 표시합니다. CLI에서 로그인하는 방법에 대한 자세한 내용은 [여기](https://developer.adobe.com/app-builder/docs/getting_started/first_app/#3-signing-in-from-cli)를 참조하십시오.
+   아직 로그인하지 않은 경우, 이 명령은 Adobe ID으로 [Adobe Developer Console](https://developer.adobe.com/console/user/servicesandapis)에 로그인하도록 요구하는 브라우저 메시지를 표시합니다. CLI에서 로그인하는 방법에 대한 자세한 내용은 [여기](https://developer.adobe.com/app-builder/docs/get_started/app_builder_get_started/first-app#3-signing-in-from-cli)를 참조하십시오.
 
-   Adobe은 먼저 로그인하는 것을 권장합니다. 문제가 있는 경우 [지침에 따라 &#x200B;](https://developer.adobe.com/app-builder/docs/getting_started/first_app/#42-developer-is-not-logged-in-as-enterprise-organization-user)에 로그인하지 않고 앱을 만듭니다.
+   Adobe은 먼저 로그인하는 것을 권장합니다. 문제가 있는 경우 [지침에 따라 ](https://developer.adobe.com/app-builder/docs/get_started/app_builder_get_started/first-app#42-developer-is-not-logged-in-as-enterprise-organization-user)에 로그인하지 않고 앱을 만듭니다.
 
 1. 로그인 후 CLI의 안내에 따라 응용 프로그램에 사용할 `Organization`, `Project` 및 `Workspace`을(를) 선택하십시오. [환경을 설정](setup-environment.md)할 때 만든 프로젝트 및 작업 영역을 선택하십시오. `Which extension point(s) do you wish to implement ?` 메시지가 표시되면 `DX Asset Compute Worker`을(를) 선택해야 합니다.
 
@@ -62,7 +62,7 @@ ht-degree: 0%
 
 1. 나머지 프롬프트에 따라 Visual Studio Code(또는 즐겨 사용하는 코드 편집기)에서 새 응용 프로그램을 엽니다. 여기에는 사용자 지정 응용 프로그램에 대한 스캐폴딩과 샘플 코드가 포함되어 있습니다.
 
-   App Builder 앱의 [기본 구성 요소](https://developer.adobe.com/app-builder/docs/getting_started/first_app/#5-anatomy-of-an-app-builder-application)에 대해 읽어 보십시오.
+   App Builder 앱의 [기본 구성 요소](https://developer.adobe.com/app-builder/docs/get_started/app_builder_get_started/first-app#5-anatomy-of-an-app-builder-application)에 대해 읽어 보십시오.
 
    템플릿 응용 프로그램은 Adobe의 [Asset Compute SDK](https://github.com/adobe/asset-compute-sdk#asset-compute-sdk)을(를) 사용하여 응용 프로그램 표현물을 업로드, 다운로드 및 오케스트레이션하므로 개발자는 사용자 지정 응용 프로그램 논리만 구현하면 됩니다. `actions/<worker-name>` 폴더 내에서 `index.js` 파일은 사용자 지정 응용 프로그램 코드를 추가할 위치입니다.
 
@@ -104,7 +104,7 @@ If you did not log in, refer to our troubleshooting guide to [set up credentials
 1. Adobe Developer Console에서 파일을 다운로드합니다. 프로젝트의 루트로 이동하고 오른쪽 상단 모서리에서 &quot;모두 다운로드&quot;를 클릭합니다. 파일 이름으로 `<namespace>-<workspace>.json`을(를) 사용하여 파일이 다운로드됩니다. 다음 중 하나를 수행하십시오.
 
    * 파일 이름을 `console.json`(으)로 변경하고 프로젝트의 루트로 이동합니다.
-   * 선택적으로 Adobe Developer Console 통합 JSON 파일에 대한 절대 경로를 추가할 수 있습니다. 이 파일은 프로젝트 작업 영역에서 다운로드한 것과 동일한 [`console.json`](https://developer.adobe.com/app-builder/docs/getting_started/first_app/#42-developer-is-not-logged-in-as-enterprise-organization-user) 파일입니다.
+   * 선택적으로 Adobe Developer Console 통합 JSON 파일에 대한 절대 경로를 추가할 수 있습니다. 이 파일은 프로젝트 작업 영역에서 다운로드한 것과 동일한 [`console.json`](https://developer.adobe.com/app-builder/docs/get_started/app_builder_get_started/first-app#42-developer-is-not-logged-in-as-enterprise-organization-user) 파일입니다.
 
      ```conf
      ASSET_COMPUTE_INTEGRATION_FILE_PATH=
@@ -243,7 +243,7 @@ const orgId = params.auth.orgId; // Experience Cloud Organization
 
 ### 서드파티 시스템에 대한 자격 증명 전달 {#pass-credentials-for-tp}
 
-다른 외부 서비스에 대한 자격 증명을 처리하려면 해당 자격 증명을 작업에 대한 기본 매개 변수로 전달합니다. 전송 중 자동으로 암호화됩니다. 자세한 내용은 [Adobe I/O Runtime 개발자 안내서에서 작업 만들기](https://developer.adobe.com/runtime/docs/guides/using/creating_actions/)를 참조하십시오. 그런 다음 배포 중에 환경 변수를 사용하여 설정하십시오. 이러한 매개 변수는 작업 내의 `params` 개체에서 액세스할 수 있습니다.
+다른 외부 서비스에 대한 자격 증명을 처리하려면 해당 자격 증명을 작업에 대한 기본 매개 변수로 전달합니다. 전송 중 자동으로 암호화됩니다. 자세한 내용은 [Adobe I/O Runtime 개발자 안내서에서 작업 만들기](https://developer.adobe.com/app-builder/docs/guides/runtime_guides/creating-actions#)를 참조하십시오. 그런 다음 배포 중에 환경 변수를 사용하여 설정하십시오. 이러한 매개 변수는 작업 내의 `params` 개체에서 액세스할 수 있습니다.
 
 `inputs`의 `manifest.yml` 내에서 기본 매개 변수를 설정합니다.
 
@@ -278,7 +278,7 @@ const key = params.secretKey;
 
 ## 애플리케이션 크기 조정 {#sizing-workers}
 
-응용 프로그램은 Adobe [!DNL I/O Runtime]의 컨테이너에서 [을(를) 통해 구성할 수 있는 &#x200B;](https://developer.adobe.com/runtime/docs/guides/using/system_settings/)limits`manifest.yml`을(를) 사용하여 실행됩니다.
+응용 프로그램은 Adobe [!DNL I/O Runtime]의 컨테이너에서 [을(를) 통해 구성할 수 있는 ](https://developer.adobe.com/app-builder/docs/guides/runtime_guides/system-settings#)limits`manifest.yml`을(를) 사용하여 실행됩니다.
 
 ```yaml
     actions:

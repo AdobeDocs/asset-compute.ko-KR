@@ -1,15 +1,15 @@
 ---
-source-git-commit: f15b9819d3319d22deccdf7e39c0f72728baaa39
+source-git-commit: f199cecfe4409e2370b30783f984062196dd807d
 workflow-type: tm+mt
-source-wordcount: '588'
-ht-degree: 33%
+source-wordcount: '587'
+ht-degree: 30%
 
 ---
-# 설명서 Contribute 지침
+# 설명서 기여 지침
 
 ## 설명서 철학
 
-사용자는 경쟁이 치열한 환경에서 작업하면서 경쟁사와 차별화된 디지털 환경을 구축하기 위해 노력하고 있습니다. 따라서 Adobe이 새로운 고급 도구를 제공할 때 정확하고 명확한 설명서로 이들 도구를 보완하는 것이 중요합니다. 고객이 즉시 투자를 사용하고 ROI를 극대화할 수 있도록 해 주는 설명서입니다.
+사용자는 경쟁이 치열한 환경에서 작업하면서 경쟁사와 차별화된 디지털 환경을 구축하기 위해 노력하고 있습니다. 따라서 Adobe에서 새로운 고급 도구를 제공할 때 정확하고 명확한 설명서로 이들 도구를 보완하는 것이 중요합니다. 고객이 즉시 투자를 사용하고 ROI를 극대화할 수 있도록 해 주는 설명서입니다.
 
 목표는 설명서를 사용자에게 최대한 신속하게 전달하는 것입니다. 따라서 Adobe에서는 정확하고 유용한 문서를 제공하는 것을 최우선으로 하며, 이를 지속적으로 업데이트하고 개선하기 위해 노력하고 있습니다.
 
@@ -21,21 +21,21 @@ ht-degree: 33%
 
 가져오기 요청 또는 문제 형식으로 된 문서에 대한 모든 기여는 Adobe의 기여도 및 설명서 표준을 준수해야 합니다.
 
-### 표준 사용 사례는 Adobe 시 문서화됩니다.
+### 표준 사용 사례는 Adobe에 설명되어 있습니다
 
 이 설명서에서는 표준 사용 사례를 다룹니다. 표준 및 지원되는 제품 설치 및 사용 범위를 벗어나는 사용 사례는 설명서에서 다루지 않습니다.
 
-이 규칙에 대한 예외는 Adobe이 승인하는 가능한 해결 방법과 함께 알려진 문제가 나열될 수 있는 릴리스 정보입니다.
+이 규칙에 대한 예외는 Adobe에서 승인하는 가능한 해결 방법과 함께 알려진 문제가 기록될 수 있는 릴리스 노트입니다.
 
 ### 설명서 기여는 고객 질문에 대한 답변이 아닙니다.
 
-설명서를 개선하기 위한 모든 아이디어를 기여로 제출할 수 있습니다. 그러나 주석, 문제 및 가져오기 요청은 *기여* 만 해당. 제품을 사용하거나, 프로젝트를 구현하거나, 기술적인 문제를 해결하는 방법에 대한 질문에 답하지 않습니다.
+설명서를 개선하기 위한 모든 아이디어를 기여로 제출할 수 있습니다. 그러나 댓글, 문제 및 가져오기 요청은 *기여*&#x200B;에 대해서만 사용됩니다. 제품을 사용하거나, 프로젝트를 구현하거나, 기술적인 문제를 해결하는 방법에 대한 질문에 답하지 않습니다.
 
-사용 또는 기술 오류에 대한 질문은 다음을 통해 일반적인 지원 프로세스를 통해 보고해야 합니다 [[!DNL Experience Manager] 고객 지원 포털](https://experienceleague.adobe.com/ko?support-solution=Experience+Manager#home) 또는에서 논의됨 [[!DNL Experience Manager] 커뮤니티](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-manager/ct-p/adobe-experience-manager-community?profile.language=ko).
+사용 또는 기술 오류에 대한 질문은 [[!DNL Experience Manager] 고객 지원 포털](https://experienceleague.adobe.com/?support-solution=Experience+Manager#home) 또는 [[!DNL Experience Manager] 커뮤니티](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-manager/ct-p/adobe-experience-manager-community)에서 일반적인 지원 프로세스를 통해 보고해야 합니다.
 
-***설명서 기여는 Adobe 고객 지원 센터를 대체할 수 없습니다*** 그리고 지원 관련 질문에 대한 답변을 구하는 기여는 거부됩니다.
+***설명서 기여는 Adobe 고객 지원 센터를 대체할 수 없으며*** 지원 관련 질문에 대한 답변을 구하는 기여는 거부됩니다.
 
-### 기여는 해당 설명서 페이지를 명확하게 참조해야 합니다.
+### 기여는 영향을 받는 설명서 페이지를 명확하게 참조해야 합니다.
 
 설명서에 대한 개선 사항을 제안하는 문제를 만드는 경우 영향을 받는 페이지에 대한 링크를 포함해야 합니다. 설명서 페이지에서 **이 페이지 편집** 링크를 사용하여 문제를 만들면 페이지에 대한 링크가 자동으로 문제와 함께 생성됩니다.
 
@@ -59,7 +59,7 @@ Adobe 설명서에 대한 모든 기여는 특정 스타일 지침을 따르도�
 
 #### Microsoft 스타일 설명서 따라하기
 
-[Microsoft 스타일 설명서](https://learn.microsoft.com/en-us/style-guide/welcome/) 는 소프트웨어 설명서에 중점을 둔 무료 설명서 스타일 안내서입니다.
+[Microsoft 스타일 설명서](https://learn.microsoft.com/en-us/style-guide/welcome/)는 소프트웨어 설명서에 중점을 둔 무료 설명서 스타일 안내서입니다.
 
 ### 서식
 
