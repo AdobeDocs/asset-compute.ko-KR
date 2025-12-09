@@ -25,7 +25,7 @@ ht-degree: 1%
 
 [!DNL Asset Compute Service]은(는) 기본 이미지 처리, Adobe 응용 프로그램별 전환 및 복잡한 비즈니스 요구 사항을 오케스트레이션하는 사용자 지정 응용 프로그램 만들기와 같은 몇 가지 일반적인 비즈니스 사용 사례를 지원합니다.
 
-[!DNL Asset Compute] 웹 서비스를 사용하여 다양한 파일 형식에 대한 썸네일, [지원되는 파일 형식에 대한 고품질 이미지 렌더링](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/assets/file-format-support)을 생성할 수 있습니다. [사용자 지정 구성을 통해 지원되는 사용 사례](https://experienceleague.adobe.com/ko/docs/experience-manager-cloud-service/content/assets/manage/asset-microservices-configure-and-use)를 참조하세요.
+[!DNL Asset Compute] 웹 서비스를 사용하여 다양한 파일 형식에 대한 썸네일, [지원되는 파일 형식에 대한 고품질 이미지 렌더링](https://experienceleague.adobe.com/ko/docs/experience-manager-cloud-service/content/assets/file-format-support)을 생성할 수 있습니다. [사용자 지정 구성을 통해 지원되는 사용 사례](https://experienceleague.adobe.com/ko/docs/experience-manager-cloud-service/content/assets/manage/asset-microservices-configure-and-use)를 참조하세요.
 
 >[!NOTE]
 >
@@ -46,7 +46,7 @@ ht-degree: 1%
 >
 >* [자산 마이크로서비스를 사용한 자산 처리 개요 [!DNL Adobe Experience Manager] as a [!DNL Cloud Service]](https://experienceleague.adobe.com/ko/docs/experience-manager-cloud-service/content/assets/asset-microservices-overview).
 >* [Adobe Developer App Builder 설명서](https://developer.adobe.com/app-builder/docs/intro_and_overview/#).
->* [처리를 위해 지원되는 파일 형식](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/assets/file-format-support).
+>* [처리를 위해 지원되는 파일 형식](https://experienceleague.adobe.com/ko/docs/experience-manager-cloud-service/content/assets/file-format-support).
 
 <!-- **TBD:**
 * Clarify the service can only be used within AEM as Cloud Service. The docs provided as context for custom application developers. Not to be used as a standalone service.
