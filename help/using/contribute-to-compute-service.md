@@ -21,7 +21,7 @@ ht-degree: 0%
 
 ## 사용 가능한 리소스 및 라이브러리 {#available-resources}
 
-[에 대한 ](https://github.com/adobe/asset-compute-sdk#available-resources-and-libraries)오픈 소스 라이브러리[!DNL Asset Compute Service] 목록을 참조하십시오. 또한 사용 가능한 [!DNL Adobe I/O] 런타임 및 OpenWhsk 리소스는 다음과 같습니다.
+[에 대한 &#x200B;](https://github.com/adobe/asset-compute-sdk#available-resources-and-libraries)오픈 소스 라이브러리[!DNL Asset Compute Service] 목록을 참조하십시오. 또한 사용 가능한 [!DNL Adobe I/O] 런타임 및 OpenWhsk 리소스는 다음과 같습니다.
 
 * [Apache OpenWhsk를 시작합니다](https://github.com/apache/openwhisk/tree/master/docs#getting-started-with-openwhisk).
 * [랩: [!DNL Adobe Sensei] 함수 및 Adobe [!DNL I/O Runtime]](https://opensource.adobe.com/adobe-sensei-ai-functions/index.html)을(를) 사용하여 컴포저블 AI를 빌드합니다.

@@ -173,7 +173,7 @@ tests/
    npm install -g ngrok --unsafe-perm=true
    ```
 
-1. JSON 파일에서 사용자 설정에 추가합니다. 이전 Visual Studio Code Debugger를 계속 사용합니다. 새 WSKDEBUG [에 ](https://github.com/apache/openwhisk-wskdebug/issues/74)일부 문제`"debug.javascript.usePreview": false`가 있습니다.
+1. JSON 파일에서 사용자 설정에 추가합니다. 이전 Visual Studio Code Debugger를 계속 사용합니다. 새 WSKDEBUG [에 &#x200B;](https://github.com/apache/openwhisk-wskdebug/issues/74)일부 문제`"debug.javascript.usePreview": false`가 있습니다.
 1. `aio app run`을(를) 통해 열려 있는 앱의 인스턴스를 모두 닫습니다.
 1. `aio app deploy`을(를) 사용하여 최신 코드를 배포합니다.
 1. `aio asset-compute devtool`을(를) 사용하여 Asset Compute Devtool만 실행합니다. 열어 두십시오.

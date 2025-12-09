@@ -25,7 +25,7 @@ ht-degree: 0%
 
    아직 로그인하지 않은 경우, 이 명령은 Adobe ID으로 [Adobe Developer Console](https://developer.adobe.com/console/user/servicesandapis)에 로그인하도록 요구하는 브라우저 메시지를 표시합니다. CLI에서 로그인하는 방법에 대한 자세한 내용은 [여기](https://developer.adobe.com/app-builder/docs/get_started/app_builder_get_started/first-app#3-signing-in-from-cli)를 참조하십시오.
 
-   Adobe은 먼저 로그인하는 것을 권장합니다. 문제가 있는 경우 [지침에 따라 ](https://developer.adobe.com/app-builder/docs/get_started/app_builder_get_started/first-app#42-developer-is-not-logged-in-as-enterprise-organization-user)에 로그인하지 않고 앱을 만듭니다.
+   Adobe은 먼저 로그인하는 것을 권장합니다. 문제가 있는 경우 [지침에 따라 &#x200B;](https://developer.adobe.com/app-builder/docs/get_started/app_builder_get_started/first-app#42-developer-is-not-logged-in-as-enterprise-organization-user)에 로그인하지 않고 앱을 만듭니다.
 
 1. 로그인 후 CLI의 안내에 따라 응용 프로그램에 사용할 `Organization`, `Project` 및 `Workspace`을(를) 선택하십시오. [환경을 설정](setup-environment.md)할 때 만든 프로젝트 및 작업 영역을 선택하십시오. `Which extension point(s) do you wish to implement ?` 메시지가 표시되면 `DX Asset Compute Worker`을(를) 선택해야 합니다.
 
@@ -278,7 +278,7 @@ const key = params.secretKey;
 
 ## 애플리케이션 크기 조정 {#sizing-workers}
 
-응용 프로그램은 Adobe [!DNL I/O Runtime]의 컨테이너에서 [을(를) 통해 구성할 수 있는 ](https://developer.adobe.com/app-builder/docs/guides/runtime_guides/system-settings#)limits`manifest.yml`을(를) 사용하여 실행됩니다.
+응용 프로그램은 Adobe [!DNL I/O Runtime]의 컨테이너에서 [을(를) 통해 구성할 수 있는 &#x200B;](https://developer.adobe.com/app-builder/docs/guides/runtime_guides/system-settings#)limits`manifest.yml`을(를) 사용하여 실행됩니다.
 
 ```yaml
     actions:

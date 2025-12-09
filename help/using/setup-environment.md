@@ -13,7 +13,7 @@ ht-degree: 1%
 
 [!DNL Asset Compute Service]에 대해 개발할 수 있는 설정을 만들려면 다음 요구 사항과 지침을 따르십시오.
 
-1. [에 대한 ](https://developer.adobe.com/app-builder/docs/get_started/app_builder_get_started/first-app#acquire-access-and-credentials)액세스 및 자격 증명을 획득[!DNL Adobe Developer App Builder]합니다.
+1. [에 대한 &#x200B;](https://developer.adobe.com/app-builder/docs/get_started/app_builder_get_started/first-app#acquire-access-and-credentials)액세스 및 자격 증명을 획득[!DNL Adobe Developer App Builder]합니다.
 
 1. [로컬 환경 설정](https://developer.adobe.com/app-builder/docs/get_started/app_builder_get_started/first-app#local-environment-set-up) 및 필요한 도구를 설정합니다.
 
