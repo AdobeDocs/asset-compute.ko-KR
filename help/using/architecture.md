@@ -2,18 +2,18 @@
 title: ' [!DNL Asset Compute Service]의 아키텍처'
 description: ' [!DNL Asset Compute Service] API, 응용 프로그램 및 SDK을 함께 사용하여 클라우드 기반 에셋 처리 서비스를 제공하는 방법입니다.'
 exl-id: 658ee4b7-5eb1-4109-b263-1b7d705e49d6
-source-git-commit: f199cecfe4409e2370b30783f984062196dd807d
+source-git-commit: aed361a577fc53caec4118e417b1c0c814617b51
 workflow-type: tm+mt
-source-wordcount: '478'
-ht-degree: 0%
+source-wordcount: '494'
+ht-degree: 1%
 
 ---
 
 # [!DNL Asset Compute Service]의 아키텍처 {#overview}
 
-[!DNL Asset Compute Service]은(는) 서버리스 Adobe [!DNL `I/O Runtime`] 플랫폼 위에 만들어집니다. 자산에 대한 Adobe Sensei 컨텐츠 서비스 지원을 제공합니다. 호출하는 클라이언트([!DNL Experience Manager]&#x200B;(으)로서 [!DNL Cloud Service]만 지원됨)에는 자산에 대해 검색한 Adobe Sensei 생성 정보가 제공됩니다. 반환된 정보는 JSON 형식입니다.
+[!DNL Asset Compute Service]은(는) 서버리스 Adobe [!DNL `I/O Runtime`] 플랫폼 위에 만들어집니다. 자산에 대한 Adobe Sensei 컨텐츠 서비스 지원을 제공합니다. 호출하는 클라이언트([!DNL Cloud Service]&#x200B;(으)로서 [!DNL Experience Manager]만 지원됨)에는 자산에 대해 검색한 Adobe Sensei 생성 정보가 제공됩니다. 반환된 정보는 JSON 형식입니다.
 
-[!DNL Asset Compute Service]을(를) 기반으로 사용자 지정 응용 프로그램을 만들어 [!DNL Adobe Developer App Builder]을(를) 확장할 수 있습니다. 이러한 사용자 지정 응용 프로그램은 [!DNL Project Adobe Developer App Builder] Headless 앱이며 사용자 지정 전환 도구를 추가하거나 외부 API를 호출하여 이미지 작업을 수행하는 등의 작업을 수행합니다.
+[!DNL Adobe Developer App Builder]을(를) 기반으로 사용자 지정 응용 프로그램을 만들어 [!DNL Asset Compute Service]을(를) 확장할 수 있습니다. 이러한 사용자 지정 응용 프로그램은 [!DNL Project Adobe Developer App Builder] Headless 앱이며 사용자 지정 전환 도구를 추가하거나 외부 API를 호출하여 이미지 작업을 수행하는 등의 작업을 수행합니다.
 
 [!DNL Project Adobe Developer App Builder]은(는) Adobe [!DNL `I/O Runtime`]에서 사용자 지정 웹 응용 프로그램을 빌드하고 배포하는 프레임워크입니다. 사용자 정의 응용 프로그램을 만들기 위해 개발자는 [!DNL React Spectrum]&#x200B;(Adobe의 UI 툴킷)을 활용하고 마이크로서비스를 만들고 사용자 정의 이벤트를 만들고 API를 오케스트레이션할 수 있습니다. [Adobe Developer App Builder 설명서](https://developer.adobe.com/app-builder/docs/intro_and_overview/#)를 참조하세요.
 
@@ -23,7 +23,7 @@ ht-degree: 0%
 
 * [!DNL Adobe I/O] 런타임의 서버를 사용하지 않는 개념으로 인해 비동기, 확장성이 뛰어난, 격리된, 작업 기반 처리 등 여러 가지 이점을 얻을 수 있으므로 자산 처리에 적합합니다.
 
-* 이진 클라우드 스토리지는 사전 서명된 URL 참조를 사용하여 스토리지에 대한 전체 액세스 권한 없이도 에셋 파일 및 렌디션을 개별적으로 저장하고 액세스하는 데 필요한 기능을 제공합니다. 전송 가속화, CDN 캐싱 및 클라우드 스토리지와 함께 컴퓨팅 애플리케이션 공동 배치를 통해 대기 시간이 짧은 최적의 콘텐츠 액세스를 제공합니다. AWS 및 Azure 클라우드 모두 지원됩니다.
+* 이진 클라우드 스토리지는 사전 서명된 URL 참조를 사용하여 스토리지에 대한 전체 액세스 권한 없이도 에셋 파일 및 렌디션을 개별적으로 저장하고 액세스하는 데 필요한 기능을 제공합니다. 전송 가속화, CDN 캐싱 및 클라우드 스토리지와 함께 컴퓨팅 애플리케이션 공동 배치를 통해 대기 시간이 짧은 최적의 콘텐츠 액세스를 제공합니다. AWS 및 Azure 클라우드가 모두 지원됩니다.
 
 ![Asset Compute 서비스의 아키텍처](assets/architecture-diagram.png)
 
@@ -35,9 +35,10 @@ ht-degree: 0%
 
 * 특정 유형의 파일 형식이나 대상 변환을 전문으로 하는 **자산을 처리하는 응용 프로그램**. 개념적으로 응용 프로그램은 UNIX® 파이프 개념과 같습니다. 입력 파일은 하나 이상의 출력 파일로 변환됩니다.
 
-* **일반 응용 프로그램 라이브러리 [2&rbrace;](https://github.com/adobe/asset-compute-sdk)에서 일반 작업을 처리합니다.** 예를 들어 소스 파일 다운로드, 렌디션 업로드, 오류 보고, 이벤트 전송 및 모니터링이 있습니다. 이러한 설계는 로컬 파일 시스템에 국한된 상호 작용으로, 서버를 사용하지 않는 개념에 따라 애플리케이션을 간편하게 개발할 수 있도록 합니다.
+* **일반 응용 프로그램 라이브러리 [2}**&#x200B;에서 일반 작업을 처리합니다. ](https://github.com/adobe/asset-compute-sdk)예를 들어 소스 파일 다운로드, 렌디션 업로드, 오류 보고, 이벤트 전송 및 모니터링이 있습니다. 이러한 설계는 로컬 파일 시스템에 국한된 상호 작용으로, 서버를 사용하지 않는 개념에 따라 애플리케이션을 간편하게 개발할 수 있도록 합니다.
 
-<!-- TBD:
+<!-- 
+TBD:
 
 * About the YAML file?
 * minimize description to custom applications

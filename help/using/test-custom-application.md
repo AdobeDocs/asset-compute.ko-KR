@@ -2,9 +2,9 @@
 title: ' [!DNL Asset Compute Service] 사용자 지정 응용 프로그램 테스트 및 디버그'
 description: ' [!DNL Asset Compute Service] 사용자 지정 응용 프로그램을 테스트하고 디버그합니다.'
 exl-id: c2534904-0a07-465e-acea-3cb578d3bc08
-source-git-commit: f199cecfe4409e2370b30783f984062196dd807d
+source-git-commit: aed361a577fc53caec4118e417b1c0c814617b51
 workflow-type: tm+mt
-source-wordcount: '775'
+source-wordcount: '855'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,8 @@ ht-degree: 0%
 $ aio app test
 ```
 
-<!-- TBD
+<!-- 
+TBD
 To run tests for a custom application, run `aio asset-compute test-worker` command at the root of the custom application application.
 
 Document interactively running `adobe-asset-compute` commands `test-worker` and `run-worker`.
@@ -84,7 +85,7 @@ test/
         mock-<HOST_NAME2>.json
 ```
 
-모의 파일은 JSON 형식의 http 응답입니다. 자세한 내용은 [이 설명서](https://www.mock-server.com/mock_server/creating_expectations.html)를 참조하세요. 모의할 호스트 이름이 여러 개 있는 경우 `mock-<mocked-host>.json`개의 파일을 여러 개 정의하십시오. 다음은 이름이 `google.com`인 `mock-google.com.json`의 샘플 모의 파일입니다.
+모의 파일은 JSON 형식의 http 응답입니다. 자세한 내용은 [이 설명서](https://www.mock-server.com/mock_server/creating_expectations.html)를 참조하세요. 모의할 호스트 이름이 여러 개 있는 경우 `mock-<mocked-host>.json`개의 파일을 여러 개 정의하십시오. 다음은 이름이 `mock-google.com.json`인 `google.com`의 샘플 모의 파일입니다.
 
 ```json
 [{
@@ -135,11 +136,11 @@ tests/
 
 ### 테스트 예상 오류 {#test-unexpected-errors}
 
-오류 테스트 사례에는 필요한 `rendition.*` 파일이 포함되지 않아야 하며 `errorReason` 파일 내에 필요한 `params.json`을(를) 정의해야 합니다.
+오류 테스트 사례에는 필요한 `rendition.*` 파일이 없어야 하며 `params.json` 파일 내에 필요한 `errorReason`을(를) 정의해야 합니다.
 
 >[!NOTE]
 >
->테스트 사례에 필요한 `rendition.*` 파일이 포함되어 있지 않고 `errorReason` 파일 내에 필요한 `params.json`을(를) 정의하지 않으면 `errorReason`의 오류 사례로 간주됩니다.
+>테스트 사례에 필요한 `rendition.*` 파일이 포함되어 있지 않고 `params.json` 파일 내에 필요한 `errorReason`을(를) 정의하지 않는 경우 `errorReason`의 오류 사례로 간주됩니다.
 
 오류 테스트 사례 구조:
 
@@ -158,25 +159,25 @@ tests/
 }
 ```
 
-[Asset Compute 오류 이유](https://github.com/adobe/asset-compute-commons#error-reasons)에 대한 전체 목록 및 설명을 참조하세요.
+[Asset Compute 오류 이유](https://github.com/adobe/asset-compute-commons#error-reasons)에 대한 전체 목록 및 설명을 참조하십시오.
 
 ## 사용자 지정 응용 프로그램 디버깅 {#debug-custom-worker}
 
-다음 단계에서는 Visual Studio 코드를 사용하여 사용자 지정 응용 프로그램을 디버깅하는 방법을 보여 줍니다. 이를 통해 라이브 로그, 히트 중단점 및 코드를 단계별로 볼 수 있을 뿐만 아니라 활성화 시마다 로컬 코드 변경 사항을 실시간으로 다시 로드할 수 있습니다.
+다음 단계에서는 Visual Studio 코드를 사용하여 사용자 지정 응용 프로그램을 디버깅하는 방법을 보여 줍니다. 활성화 시마다 라이브 로그, 히트 중단점, 코드를 단계별로 확인할 수 있으며, 로컬 코드 변경 사항을 실시간으로 다시 로드할 수 있습니다.
 
-`aio`은(는) 이러한 단계를 대부분 자동화합니다. [Adobe Developer App Builder 설명서](https://developer.adobe.com/app-builder/docs/get_started/app_builder_get_started/first-app#)의 응용 프로그램 디버깅 섹션으로 이동합니다. 현재 아래 단계에는 해결 방법이 포함되어 있습니다.
+`aio`은(는) 이러한 많은 단계를 자동화합니다. [Adobe Developer App Builder 설명서](https://developer.adobe.com/app-builder/docs/get_started/app_builder_get_started/first-app#)의 응용 프로그램 디버깅 섹션으로 이동하십시오. 현재 아래 단계에는 해결 방법이 포함되어 있습니다.
 
-1. GitHub에서 최신 [wskdebug](https://github.com/apache/openwhisk-wskdebug) 및 선택적 [ngrok](https://www.npmjs.com/package/ngrok)을(를) 설치합니다.
+1. GitHub에서 최신 [wskdebug](https://github.com/apache/openwhisk-wskdebug) 및 선택적 [ngrok](https://www.npmjs.com/package/ngrok)을(를) 설치하십시오.
 
    ```shell
    npm install -g @openwhisk/wskdebug
    npm install -g ngrok --unsafe-perm=true
    ```
 
-1. JSON 파일에서 사용자 설정에 추가합니다. 이전 Visual Studio Code Debugger를 계속 사용합니다. 새 WSKDEBUG [에 &#x200B;](https://github.com/apache/openwhisk-wskdebug/issues/74)일부 문제`"debug.javascript.usePreview": false`가 있습니다.
+1. JSON 파일에서 사용자 설정을 추가합니다. 이전 Visual Studio 코드 디버거를 계속 사용합니다. 새 항목에 wskdebug `"debug.javascript.usePreview": false`에 [몇 가지 문제](https://github.com/apache/openwhisk-wskdebug/issues/74)가 있습니다.
 1. `aio app run`을(를) 통해 열려 있는 앱의 인스턴스를 모두 닫습니다.
 1. `aio app deploy`을(를) 사용하여 최신 코드를 배포합니다.
-1. `aio asset-compute devtool`을(를) 사용하여 Asset Compute Devtool만 실행합니다. 열어 두십시오.
+1. `aio asset-compute devtool`을(를) 사용하여 Asset Compute Devtool만 실행하십시오. 열어 두십시오.
 1. Visual Studio 코드 편집기에서 다음 디버그 구성을 `launch.json`에 추가합니다.
 
    ```json
@@ -198,11 +199,11 @@ tests/
    }
    ```
 
-   `ACTION NAME`의 출력에서 `aio app deploy`을(를) 가져옵니다.
+   `aio app deploy`의 출력에서 `ACTION NAME`을(를) 가져옵니다.
 
-1. 실행/디버깅 구성에서 `wskdebug worker`을(를) 선택하고 재생 아이콘을 누릅니다. **[!UICONTROL Debug Console]** 창에 **[!UICONTROL 활성화 준비]**&#x200B;가 표시될 때까지 시작될 때까지 기다립니다.
+1. 실행/디버깅 구성에서 `wskdebug worker`을(를) 선택하고 재생 아이콘을 누릅니다. **[!UICONTROL 디버그 콘솔]** 창에 **[!UICONTROL 활성화 준비]**&#x200B;가 표시될 때까지 기다립니다.
 
-1. Devtool에서 **[!UICONTROL 실행]**&#x200B;을 클릭합니다. Visual Studio 코드 편집기에서 실행 중인 작업을 볼 수 있으며 로그가 표시되기 시작합니다.
+1. Devtool에서 **[!UICONTROL run]**&#x200B;을(를) 클릭합니다. Visual Studio 코드 편집기에서 실행 중인 작업을 볼 수 있으며 로그가 표시되기 시작합니다.
 
 1. 코드에서 중단점을 설정합니다. 그런 다음 다시 실행하면 맞을 것입니다.
 

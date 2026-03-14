@@ -2,9 +2,9 @@
 title: 사용자 정의 애플리케이션 작업 이해
 description: 작동 방식을 이해하는 데 도움이 되도록  [!DNL Asset Compute Service] 사용자 지정 응용 프로그램의 내부 작업.
 exl-id: a3ee6549-9411-4839-9eff-62947d8f0e42
-source-git-commit: f199cecfe4409e2370b30783f984062196dd807d
+source-git-commit: aed361a577fc53caec4118e417b1c0c814617b51
 workflow-type: tm+mt
-source-wordcount: '689'
+source-wordcount: '786'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 0%
 
 ## 등록 {#registration}
 
-클라이언트가 [`/register`](api.md#register)에 대한 첫 번째 요청 전에 [`/process`](api.md#process-request)을(를) 한 번 호출해야 Adobe Asset Compute에 대한 Adobe [!DNL I/O Events] 이벤트를 수신하기 위한 저널 URL을 설정하고 검색할 수 있습니다.
+클라이언트가 [`/process`](api.md#process-request)에 대한 첫 번째 요청 전에 [`/register`](api.md#register)을(를) 한 번 호출해야 Adobe Asset Compute에 대한 Adobe [!DNL I/O Events] 이벤트를 수신하기 위한 저널 URL을 설정하고 검색할 수 있습니다.
 
 ```sh
 curl -X POST \
@@ -46,9 +46,9 @@ curl -X POST \
   -d "<RENDITION_JSON>
 ```
 
-클라이언트는 사전 서명된 URL을 사용하여 렌디션의 서식을 올바르게 지정합니다. [`@adobe/node-cloud-blobstore-wrapper`](https://github.com/adobe/node-cloud-blobstore-wrapper#presigned-urls) JavaScript 라이브러리는 NodeJS 응용 프로그램에서 URL을 사전 서명하는 데 사용할 수 있습니다. 현재 라이브러리는 Azure Blob Storage 및 AWS S3 컨테이너만 지원합니다.
+클라이언트는 사전 서명된 URL을 사용하여 렌디션의 서식을 올바르게 지정합니다. [`@adobe/node-cloud-blobstore-wrapper`](https://github.com/adobe/node-cloud-blobstore-wrapper#presigned-urls) JavaScript 라이브러리는 NodeJS 응용 프로그램에서 URL을 사전 서명하는 데 사용할 수 있습니다. 현재 라이브러리는 Azure Blob 저장소 및 AWS S3 컨테이너만 지원합니다.
 
-처리 요청이 `requestId` 이벤트를 폴링하는 데 사용할 수 있는 [!DNL Adobe I/O]을(를) 반환합니다.
+처리 요청이 [!DNL Adobe I/O] 이벤트를 폴링하는 데 사용할 수 있는 `requestId`을(를) 반환합니다.
 
 샘플 사용자 정의 애플리케이션 처리 요청은 다음과 같습니다.
 
@@ -72,7 +72,9 @@ curl -X POST \
 
 사용자 지정 응용 프로그램에서 사용하는 [Asset Compute SDK](https://github.com/adobe/asset-compute-sdk#adobe-asset-compute-worker-sdk)이(가) HTTP POST 요청을 처리합니다. 또한 소스 다운로드, 렌디션 업로드, Adobe [!DNL I/O Events] 전송 및 오류 처리도 처리합니다.
 
-<!-- TBD: Add the application diagram. -->
+<!-- 
+TBD: Add the application diagram. 
+-->
 
 ### 애플리케이션 코드 {#application-code}
 
@@ -120,7 +122,7 @@ SDK에서 각 렌디션에 대해 Adobe [!DNL I/O Events]을(를) 보냅니다. 
 
 ## [!DNL Adobe I/O Events] 받기 {#receive-aio-events}
 
-클라이언트가 사용 논리에 따라 Adobe [!DNL I/O Events] 저널을 폴링합니다. 초기 저널 URL은 `/register` API 응답에 제공된 URL입니다. 이벤트에 있고 `requestId`에서 반환된 것과 동일한 `/process`을(를) 사용하여 이벤트를 식별할 수 있습니다. 모든 렌디션에는 렌디션이 업로드(또는 실패)되는 즉시 전송되는 별도의 이벤트가 있습니다. 일치하는 이벤트를 받으면 클라이언트가 결과 렌디션을 표시하거나 처리할 수 있습니다.
+클라이언트가 사용 논리에 따라 Adobe [!DNL I/O Events] 저널을 폴링합니다. 초기 저널 URL은 `/register` API 응답에 제공된 URL입니다. 이벤트에 있고 `/process`에서 반환된 것과 동일한 `requestId`을(를) 사용하여 이벤트를 식별할 수 있습니다. 모든 렌디션에는 렌디션이 업로드(또는 실패)되는 즉시 전송되는 별도의 이벤트가 있습니다. 일치하는 이벤트를 받으면 클라이언트가 결과 렌디션을 표시하거나 처리할 수 있습니다.
 
 JavaScript 라이브러리 [`asset-compute-client`](https://github.com/adobe/asset-compute-client#usage)은(는) `waitActivation()` 메서드를 사용하여 모든 이벤트를 가져오도록 저널 폴링을 간단하게 만듭니다.
 
@@ -142,7 +144,8 @@ await Promise.all(events.map(event => {
 
 저널 이벤트를 가져오는 방법에 대한 자세한 내용은 Adobe [[!DNL I/O Events] API](https://developer.adobe.com/events/docs/guides/api/journaling-api#)을(를) 참조하십시오.
 
-<!-- TBD:
+<!-- 
+TBD:
 * Illustration of the controls/data flow.
 * Basic overview, in text and not code, of how an application works.
 -->
