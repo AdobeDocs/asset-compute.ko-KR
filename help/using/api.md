@@ -2,9 +2,14 @@
 title: '[!DNL Asset Compute Service] HTTP API'
 description: 사용자 지정 응용 프로그램을 만들기 위한 [!DNL Asset Compute Service] HTTP API입니다.
 exl-id: 4b63fdf9-9c0d-4af7-839d-a95e07509750
-source-git-commit: aed361a577fc53caec4118e417b1c0c814617b51
+TQID: https://experienceleague.adobe.com/fewAzOtKA-XTmpv-6Q0mlqXpalMWva6GpHlJSW6wPog
+product_v2: id: d09181b5-a36a-43de-ba01-36641440bc43id: fd1f54a9-f50c-467d-8956-cebbaf4f3eb8
+feature_v2: id: a01bfd36-4ab8-4bf8-9dc0-5b45b890552eid: ae478996-b206-4712-9b0c-dc78a2644453id: da0dfbce-df02-4f8b-b32d-a4e3b1d05085id: e17747bc-9b7b-44e6-a443-f54229a02620
+role_v2: id: ff6a42d2-313e-452e-93a6-792e4fad9ff8
+topic_v2: id: a004cc84-67b9-4a33-a3a7-8ec7273ef4dc
+source-git-commit: 2510f77fed8d0f0708e09f32d0b13a437d2ede4f
 workflow-type: tm+mt
-source-wordcount: '2995'
+source-wordcount: 2995
 ht-degree: 3%
 
 ---
@@ -374,7 +379,7 @@ HTTP 상태 코드는 다음과 같습니다.
 
 | 이름 | 유형 | 설명 | 예 |
 |-------------------|----------|-------------|---------|
-| `fmt` | `string` | 렌디션 대상 형식은 텍스트 추출을 위해 `text`을(를) 사용하고, XMP 메타데이터를 xml로 추출하기 위해 `xmp`을(를) 사용할 수도 있습니다. [지원되는 형식](https://experienceleague.adobe.com/ko/docs/experience-manager-cloud-service/content/assets/file-format-support)을 참조하세요. | `png` |
+| `fmt` | `string` | 렌디션 대상 형식은 텍스트 추출을 위해 `text`을(를) 사용하고, XMP 메타데이터를 xml로 추출하기 위해 `xmp`을(를) 사용할 수도 있습니다. [지원되는 형식](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/assets/file-format-support)을 참조하세요. | `png` |
 | `worker` | `string` | [사용자 지정 응용 프로그램](develop-custom-application.md)의 URL. `https://` URL이어야 합니다. 이 필드가 있으면 사용자 정의 응용 프로그램에서 렌디션을 만듭니다. 그런 다음 사용자 정의 애플리케이션에서 다른 모든 렌디션 설정 필드를 사용합니다. | `"https://1234.adobeioruntime.net`<br>`/api/v1/web`<br>`/example-custom-worker-master/worker"` |
 | `target` | `string` | HTTP PUT을 사용하여 생성된 렌디션을 업로드해야 하는 URL입니다. | `http://w.com/img.jpg` |
 | `target` | `object` | 생성된 렌디션에 대한 다중 부분 사전 서명된 URL 업로드 정보입니다. 이 정보는 [다중 부분 업로드 동작](https://jackrabbit.apache.org/oak/docs/apidocs/org/apache/jackrabbit/api/binary/BinaryUpload.html)을 사용하는 [AEM/Oak 다이렉트 이진 업로드](https://jackrabbit.apache.org/oak/docs/features/direct-binary-access.html)에 대한 것입니다.<br>필드:<ul><li>`urls`: 사전 서명된 각 부분 URL에 대해 하나씩 문자열 배열</li><li>`minPartSize`: 한 부분에 사용할 최소 크기 = url</li><li>`maxPartSize`: 한 부분에 사용할 최대 크기 = url</li></ul> | `{ "urls": [ "https://part1...", "https://part2..." ], "minPartSize": 10000, "maxPartSize": 100000 }` |
@@ -382,7 +387,7 @@ HTTP 상태 코드는 다음과 같습니다.
 
 ### 렌디션별 필드 {#rendition-specific-fields}
 
-현재 지원되는 파일 형식 목록은 [지원되는 파일 형식](https://experienceleague.adobe.com/ko/docs/experience-manager-cloud-service/content/assets/file-format-support)을 참조하십시오.
+현재 지원되는 파일 형식 목록은 [지원되는 파일 형식](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/assets/file-format-support)을 참조하십시오.
 
 | 이름 | 유형 | 설명 | 예 |
 |-------------------|----------|-------------|---------|
@@ -407,7 +412,7 @@ PNG 형식은 워터마크로 사용됩니다.
 
 | 이름 | 유형 | 설명 | 예 |
 |-------------------|----------|-------------|---------|
-| `scale` | `number` | 워터마크 크기(`0.0`에서 `1.0` 사이)입니다. `1.0` 는 워터마크의 원래 크기(1:1)가 있고 값이 낮을수록 워터마크 크기가 감소됨을 의미합니다. | `0.5` 값은 원래 크기의 절반을 의미합니다. |
+| `scale` | `number` | 워터마크 크기(`0.0`에서 `1.0` 사이)입니다. `1.0`은(는) 워터마크의 원래 크기(1:1)가 있고 값이 낮을수록 워터마크 크기가 줄어든다는 의미입니다. | `0.5` 값은 원래 크기의 절반을 의미합니다. |
 | `image` | `url` | 워터마크에 사용할 PNG 파일의 URL입니다. | |
 
 ## 비동기 이벤트 {#asynchronous-events}

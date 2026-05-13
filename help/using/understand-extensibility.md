@@ -2,16 +2,19 @@
 title: ' [!DNL Asset Compute Service] 확장에 대한 이해'
 description: 사용자 지정 에셋 처리를 위해  [!DNL Asset Compute Service] 기능을 확장하는 시기와 방법.
 exl-id: 3b903364-34cc-44d5-9a03-24a0102cf85d
-source-git-commit: aed361a577fc53caec4118e417b1c0c814617b51
+TQID: https://experienceleague.adobe.com/T-Q9ssFC8lirvK3Wl7goCbvso0k--ubsO64cF5MmNn0
+product_v2: id: d09181b5-a36a-43de-ba01-36641440bc43id: fd1f54a9-f50c-467d-8956-cebbaf4f3eb8
+role_v2: id: ff6a42d2-313e-452e-93a6-792e4fad9ff8
+source-git-commit: 2510f77fed8d0f0708e09f32d0b13a437d2ede4f
 workflow-type: tm+mt
-source-wordcount: '304'
+source-wordcount: 304
 ht-degree: 11%
 
 ---
 
 # 확장성 소개 {#introduction-to-extensibilty}
 
-형식으로 변환 및 이미지 크기 조정과 같은 많은 렌디션 요구 사항은 [처리 프로필 [!DNL Experience Manager] as a [!DNL Cloud Service]](https://experienceleague.adobe.com/ko/docs/experience-manager-cloud-service/content/assets/asset-microservices-overview)을 통해 해결됩니다. 보다 복잡한 비즈니스 요구 사항에는 조직의 요구 사항에 맞는 맞춤형 솔루션이 필요할 수 있습니다. [!DNL Asset Compute Service] [!DNL Experience Manager]의 처리 프로필에서 호출되는 사용자 지정 응용 프로그램을 만들어 확장할 수 있습니다. 이러한 사용자 지정 응용 프로그램은 [지원되는 사용 사례](https://experienceleague.adobe.com/ko/docs/experience-manager-cloud-service/content/assets/manage/asset-microservices-configure-and-use)를 충족합니다.
+형식으로 변환 및 이미지 크기 조정과 같은 많은 렌디션 요구 사항은 [처리 프로필 [!DNL Experience Manager] as a [!DNL Cloud Service]](https://experienceleague.adobe.com/ko/docs/experience-manager-cloud-service/content/assets/asset-microservices-overview)을 통해 해결됩니다. 보다 복잡한 비즈니스 요구 사항에는 조직의 요구 사항에 맞는 맞춤형 솔루션이 필요할 수 있습니다. [!DNL Experience Manager]의 처리 프로필에서 호출되는 사용자 지정 응용 프로그램을 만들어 [!DNL Asset Compute Service]을(를) 확장할 수 있습니다. 이러한 사용자 지정 응용 프로그램은 [지원되는 사용 사례](https://experienceleague.adobe.com/ko/docs/experience-manager-cloud-service/content/assets/manage/asset-microservices-configure-and-use)를 충족합니다.
 
 >[!NOTE]
 >
