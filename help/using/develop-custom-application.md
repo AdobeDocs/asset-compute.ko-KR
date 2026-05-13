@@ -3,10 +3,15 @@ title: ' [!DNL Asset Compute Service]에 대한 개발'
 description: ' [!DNL Asset Compute Service]을(를) 사용하여 사용자 지정 응용 프로그램을 만듭니다.'
 exl-id: a0c59752-564b-4bb6-9833-ab7c58a7f38e
 TQID: https://experienceleague.adobe.com/vxnV2d7jBpmAh3CxyP5pp3qrjPuV39J10uZ1CJMVByc
-product_v2: id: d09181b5-a36a-43de-ba01-36641440bc43id: fd1f54a9-f50c-467d-8956-cebbaf4f3eb8
-feature_v2: id: a01bfd36-4ab8-4bf8-9dc0-5b45b890552e
-role_v2: id: ff6a42d2-313e-452e-93a6-792e4fad9ff8
-topic_v2: id: b5ce8718-c3af-4fdb-a1a9-fca32f83a87c
+product_v2:
+  - id: d09181b5-a36a-43de-ba01-36641440bc43
+  - id: fd1f54a9-f50c-467d-8956-cebbaf4f3eb8
+feature_v2:
+  - id: a01bfd36-4ab8-4bf8-9dc0-5b45b890552e
+role_v2:
+  - id: ff6a42d2-313e-452e-93a6-792e4fad9ff8
+topic_v2:
+  - id: b5ce8718-c3af-4fdb-a1a9-fca32f83a87c
 source-git-commit: 2510f77fed8d0f0708e09f32d0b13a437d2ede4f
 workflow-type: tm+mt
 source-wordcount: 1722
@@ -30,7 +35,7 @@ ht-degree: 0%
 
    아직 로그인하지 않은 경우, 이 명령은 Adobe ID으로 [Adobe Developer Console](https://developer.adobe.com/console/user/servicesandapis)에 로그인하도록 요구하는 브라우저 메시지를 표시합니다. CLI에서 로그인하는 방법에 대한 자세한 내용은 [여기](https://developer.adobe.com/app-builder/docs/get_started/app_builder_get_started/first-app#3-signing-in-from-cli)를 참조하십시오.
 
-   Adobe은 먼저 로그인하는 것을 권장합니다. 문제가 있는 경우 [지침에 따라 ](https://developer.adobe.com/app-builder/docs/get_started/app_builder_get_started/first-app#42-developer-is-not-logged-in-as-enterprise-organization-user)에 로그인하지 않고 앱을 만듭니다.
+   Adobe은 먼저 로그인하는 것을 권장합니다. 문제가 있는 경우 [지침에 따라 &#x200B;](https://developer.adobe.com/app-builder/docs/get_started/app_builder_get_started/first-app#42-developer-is-not-logged-in-as-enterprise-organization-user)에 로그인하지 않고 앱을 만듭니다.
 
 1. 로그인 후 CLI의 안내에 따라 응용 프로그램에 사용할 `Organization`, `Project` 및 `Workspace`을(를) 선택하십시오. [환경을 설정](setup-environment.md)할 때 만든 프로젝트 및 작업 영역을 선택하십시오. `Which extension point(s) do you wish to implement ?` 메시지가 표시되면 `DX Asset Compute Worker`을(를) 선택해야 합니다.
 
