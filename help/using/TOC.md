@@ -11,7 +11,7 @@ feature: Asset Compute Microservices
 user-guide-title: Asset Compute 서비스 안내서
 user-guide-description: 이 설명서에서는 사용자 지정 코드의 개발, 관리, 배포 및 문제 해결 방법과 같은  [!DNL Asset Compute Service] 가지 작업을 다룹니다.
 breadcrumb-title: Asset Compute 서비스 안내서
-source-git-commit: 9d22220466d836df075748dd1dc0bf422c620c36
+source-git-commit: 7997d284c6051dd2b9f7635f955bdc49d52e843a
 workflow-type: tm+mt
 source-wordcount: 109
 ht-degree: 16%
