@@ -3,10 +3,15 @@ title: ' [!DNL Asset Compute Service]의 아키텍처'
 description: ' [!DNL Asset Compute Service] API, 응용 프로그램 및 SDK을 함께 사용하여 클라우드 기반 에셋 처리 서비스를 제공하는 방법입니다.'
 exl-id: 658ee4b7-5eb1-4109-b263-1b7d705e49d6
 TQID: https://experienceleague.adobe.com/HM9aYFHI98DFs4rfcStr-mpAfYVrjvMtlO6N7azO-20
-product_v2: id: d09181b5-a36a-43de-ba01-36641440bc43id: fd1f54a9-f50c-467d-8956-cebbaf4f3eb8
-feature_v2: id: a01bfd36-4ab8-4bf8-9dc0-5b45b890552e
-role_v2: id: ff6a42d2-313e-452e-93a6-792e4fad9ff8
-topic_v2: id: aa2f3246-cb95-4b30-8899-fdf7d73550cc
+product_v2:
+  - id: d09181b5-a36a-43de-ba01-36641440bc43
+  - id: fd1f54a9-f50c-467d-8956-cebbaf4f3eb8
+feature_v2:
+  - id: a01bfd36-4ab8-4bf8-9dc0-5b45b890552e
+role_v2:
+  - id: ff6a42d2-313e-452e-93a6-792e4fad9ff8
+topic_v2:
+  - id: aa2f3246-cb95-4b30-8899-fdf7d73550cc
 source-git-commit: 2510f77fed8d0f0708e09f32d0b13a437d2ede4f
 workflow-type: tm+mt
 source-wordcount: 494
@@ -40,7 +45,7 @@ ht-degree: 1%
 
 * 특정 유형의 파일 형식이나 대상 변환을 전문으로 하는 **자산을 처리하는 응용 프로그램**. 개념적으로 응용 프로그램은 UNIX® 파이프 개념과 같습니다. 입력 파일은 하나 이상의 출력 파일로 변환됩니다.
 
-* **일반 응용 프로그램 라이브러리 [2}**&#x200B;에서 일반 작업을 처리합니다. ](https://github.com/adobe/asset-compute-sdk)예를 들어 소스 파일 다운로드, 렌디션 업로드, 오류 보고, 이벤트 전송 및 모니터링이 있습니다. 이러한 설계는 로컬 파일 시스템에 국한된 상호 작용으로, 서버를 사용하지 않는 개념에 따라 애플리케이션을 간편하게 개발할 수 있도록 합니다.
+* **일반 응용 프로그램 라이브러리 [2&rbrace;**&#x200B;에서 일반 작업을 처리합니다. &#x200B;](https://github.com/adobe/asset-compute-sdk)예를 들어 소스 파일 다운로드, 렌디션 업로드, 오류 보고, 이벤트 전송 및 모니터링이 있습니다. 이러한 설계는 로컬 파일 시스템에 국한된 상호 작용으로, 서버를 사용하지 않는 개념에 따라 애플리케이션을 간편하게 개발할 수 있도록 합니다.
 
 <!-- 
 TBD:
