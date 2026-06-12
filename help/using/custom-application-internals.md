@@ -3,13 +3,9 @@ title: 사용자 정의 애플리케이션 작업 이해
 description: 작동 방식을 이해하는 데 도움이 되도록  [!DNL Asset Compute Service] 사용자 지정 응용 프로그램의 내부 작업.
 exl-id: a3ee6549-9411-4839-9eff-62947d8f0e42
 TQID: https://experienceleague.adobe.com/cwZSB-PP9CxqnUUQslrSRSp-ljjliomsR9TflBUOCuk
-product_v2:
-  - id: d09181b5-a36a-43de-ba01-36641440bc43
-  - id: fd1f54a9-f50c-467d-8956-cebbaf4f3eb8
-role_v2:
-  - id: ff6a42d2-313e-452e-93a6-792e4fad9ff8
-topic_v2:
-  - id: d095671a-1355-40aa-8b5f-06c33c68080b
+product_v2: id: d09181b5-a36a-43de-ba01-36641440bc43id: fd1f54a9-f50c-467d-8956-cebbaf4f3eb8
+role_v2: id: ff6a42d2-313e-452e-93a6-792e4fad9ff8
+topic_v2: id: d095671a-1355-40aa-8b5f-06c33c68080b
 source-git-commit: 2510f77fed8d0f0708e09f32d0b13a437d2ede4f
 workflow-type: tm+mt
 source-wordcount: 786
