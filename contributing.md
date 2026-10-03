@@ -58,5 +58,5 @@ Adobe은 모든 기여에 만족하며, 기여가 공용 리포지토리에서 �
 
 ## 추가 정보
 
-GitHub 제작 플랫폼을 사용하는 방법에 대한 자세한 내용은 [Adobe 문서 기여자 안내서](https://experienceleague.adobe.com/en/docs/contributor/contributor-guide/introduction)를 참조하십시오.
+GitHub 제작 플랫폼을 사용하는 방법에 대한 자세한 내용은 [Adobe 문서 기여자 안내서](https://experienceleague.adobe.com/ko/docs/contributor/contributor-guide/introduction)를 참조하십시오.
 
